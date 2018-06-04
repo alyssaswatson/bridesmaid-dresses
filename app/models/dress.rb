@@ -1,3 +1,4 @@
 class Dress < ActiveRecord::Base
-  belongs_to :bridesmaid
+  has_many :bridesmaids
+  has_many :brides, through: :bridesmaids
 end
