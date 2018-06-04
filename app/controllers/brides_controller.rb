@@ -1,0 +1,4 @@
+class BridesController < ApplicationController
+
+
+end
