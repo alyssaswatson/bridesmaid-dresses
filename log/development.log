@@ -547,3 +547,99 @@ true by adding the following to your application.rb file:
 Started POST "/brides" for 127.0.0.1 at 2018-06-05 16:25:00 -0400
 Processing by BridesController#create as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"YRrFPWwUDhZV4wv4tJoWZ9OFmTHO4pdnLWgjDPquu2t2bPAvkhYiSQ5FSgLdm1uY/CWVzW2BkTdB61ofC2JuZA==", "bride"=>{"name"=>"Alyssa", "password"=>"[FILTERED]", "grooms_name"=>"Adam"}, "wedding_date"=>{"year"=>"2018", "month"=>"6", "day"=>"5"}, "commit"=>"Create Bride"}
+Started GET "/brides" for 127.0.0.1 at 2018-06-05 16:50:11 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BridesController#index as HTML
+  Rendering brides/index.html.erb
+  Rendered brides/index.html.erb (1.9ms)
+Completed 200 OK in 72ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-05 16:50:16 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (558.9ms)
+Completed 200 OK in 606ms (Views: 565.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-05 16:50:21 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CnxO9Lbt98qB8vYDtDCrjKwjbE1FlM5QxCiw/MeDso0dCnvmSO/bldpUt/ndMeZzg4Ngseb3yACoq8nvNk9ngg==", "bride"=>{"name"=>"", "password"=>"[FILTERED]", "grooms_name"=>""}, "wedding_date"=>{"year"=>"2018", "month"=>"6", "day"=>"5"}, "commit"=>"Create Bride"}
+Started GET "/brides" for 127.0.0.1 at 2018-06-05 17:41:28 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BridesController#index as HTML
+  Rendering brides/index.html.erb
+  Rendered brides/index.html.erb (2.1ms)
+Completed 200 OK in 73ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-05 17:41:31 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (174.0ms)
+Completed 200 OK in 219ms (Views: 179.4ms | ActiveRecord: 0.9ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /Users/Alyssa/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55)
+Started GET "/" for 127.0.0.1 at 2018-06-05 17:45:16 -0400
+Started GET "/" for 127.0.0.1 at 2018-06-05 17:45:26 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-05 17:45:45 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.5ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+

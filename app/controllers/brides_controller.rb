@@ -8,8 +8,10 @@ class BridesController < ApplicationController
   end
 
   def create
-    byebug
-
+    @bride = Bride.new
+    @bride.name = params[:bride][:name]
+    @bride.password = params[:bride][:password]
+    @bride.grooms_name = params[:bride][:grooms_name]
   end
 
 end
