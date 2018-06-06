@@ -643,3 +643,61 @@ Processing by DressesController#index as HTML
 Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-06-06 12:50:25 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (42.9ms)
+Completed 200 OK in 976ms (Views: 119.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-06 12:50:41 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb
+  Rendered dresses/new.html.erb (0.7ms)
+Completed 200 OK in 17ms (Views: 5.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-06 13:21:40 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (1.9ms)
+Completed 200 OK in 59ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-06 13:21:45 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb
+  Rendered dresses/new.html.erb (155.6ms)
+Completed 200 OK in 205ms (Views: 161.6ms | ActiveRecord: 1.1ms)
+
+
