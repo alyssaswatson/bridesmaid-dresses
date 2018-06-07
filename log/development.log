@@ -701,3 +701,400 @@ Processing by DressesController#new as HTML
 Completed 200 OK in 205ms (Views: 161.6ms | ActiveRecord: 1.1ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /Users/Alyssa/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55)
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-06 14:46:29 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Alyssa/rails_projects/bridesmaids-dresses/app/controllers/dresses_controller.rb:19: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/dresses_controller.rb:19: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-06 14:46:41 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb
+  Rendered dresses/new.html.erb (128.2ms)
+Completed 200 OK in 216ms (Views: 135.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/dresses" for 127.0.0.1 at 2018-06-06 14:48:00 -0400
+Processing by DressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IHSOP9AmgIDcysMepqHjXaDNAb1brNjHQ04c9Eo9MjflqZ3Ioikt0tNfICFgOk9s6/Ev7W8i7fYTHEJYQMByKQ==", "dress"=>{"link"=>"dress link", "material"=>"silk", "length"=>"short"}, "commit"=>"Create Dress"}
+No template found for DressesController#create, rendering head :no_content
+Completed 204 No Content in 117ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/dresses" for 127.0.0.1 at 2018-06-06 14:48:09 -0400
+Processing by DressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IHSOP9AmgIDcysMepqHjXaDNAb1brNjHQ04c9Eo9MjflqZ3Ioikt0tNfICFgOk9s6/Ev7W8i7fYTHEJYQMByKQ==", "dress"=>{"link"=>"dress link", "material"=>"silk", "length"=>"short"}, "commit"=>"Create Dress"}
+No template found for DressesController#create, rendering head :no_content
+Completed 204 No Content in 84ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-06 14:49:25 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb
+  Rendered dresses/new.html.erb (2.2ms)
+Completed 200 OK in 35ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-06 14:49:46 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb
+  Rendered dresses/new.html.erb (2.0ms)
+Completed 200 OK in 35ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dresses" for 127.0.0.1 at 2018-06-06 14:50:02 -0400
+Processing by DressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fekVfBv+jXG7xwV0h9i0+TPMxawfh4nzq3XT7qFhDA64NAaLafEgI7RS5ktBQxjIePDr/CsJvML7J41Cq5xMEA==", "dress"=>{"link"=>"dress link", "material"=>"silk", "length"=>"short"}, "commit"=>"Create Dress"}
+No template found for DressesController#create, rendering head :no_content
+Completed 204 No Content in 106ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/dresses" for 127.0.0.1 at 2018-06-06 14:50:04 -0400
+Processing by DressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fekVfBv+jXG7xwV0h9i0+TPMxawfh4nzq3XT7qFhDA64NAaLafEgI7RS5ktBQxjIePDr/CsJvML7J41Cq5xMEA==", "dress"=>{"link"=>"dress link", "material"=>"silk", "length"=>"short"}, "commit"=>"Create Dress"}
+No template found for DressesController#create, rendering head :no_content
+Completed 204 No Content in 94ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/dresses" for 127.0.0.1 at 2018-06-06 14:51:41 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fekVfBv+jXG7xwV0h9i0+TPMxawfh4nzq3XT7qFhDA64NAaLafEgI7RS5ktBQxjIePDr/CsJvML7J41Cq5xMEA==", "dress"=>{"link"=>"dress link", "material"=>"silk", "length"=>"short"}, "commit"=>"Create Dress"}
+No template found for DressesController#create, rendering head :no_content
+Completed 204 No Content in 151ms (ActiveRecord: 1.2ms)
+
+
+Started POST "/dresses" for 127.0.0.1 at 2018-06-06 14:51:43 -0400
+Processing by DressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fekVfBv+jXG7xwV0h9i0+TPMxawfh4nzq3XT7qFhDA64NAaLafEgI7RS5ktBQxjIePDr/CsJvML7J41Cq5xMEA==", "dress"=>{"link"=>"dress link", "material"=>"silk", "length"=>"short"}, "commit"=>"Create Dress"}
+No template found for DressesController#create, rendering head :no_content
+Completed 204 No Content in 80ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-06 14:52:59 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (273.0ms)
+Completed 200 OK in 422ms (Views: 374.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-06 14:53:01 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yT24AwMVb7DHv7MOm+fR8cbWW5XLg3G1B0SAK0+kKKbeS40R/RdD75wZ8vTy5pwO6XZXaWjgd+Vrx/k4vmj9qQ==", "bride"=>{"name"=>"", "password"=>"[FILTERED]", "grooms_name"=>""}, "commit"=>"Create Bride"}
+No template found for BridesController#create, rendering head :no_content
+Completed 204 No Content in 86ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-06 14:53:09 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yT24AwMVb7DHv7MOm+fR8cbWW5XLg3G1B0SAK0+kKKbeS40R/RdD75wZ8vTy5pwO6XZXaWjgd+Vrx/k4vmj9qQ==", "bride"=>{"name"=>"Alyssa", "password"=>"[FILTERED]", "grooms_name"=>"Adam"}, "commit"=>"Create Bride"}
+No template found for BridesController#create, rendering head :no_content
+Completed 204 No Content in 182ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-07 16:46:20 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (4.5ms)
+Completed 200 OK in 52ms (Views: 10.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-07 16:46:27 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ttry32mlI/76jCvby2X4coYedT4A995iKnHctPHjvEGhrMfNl6cPoaEqaiGiZLWNqb55wqOU2DJG8qWnAC9pTg==", "bride"=>{"name"=>"Alyssa", "password"=>"[FILTERED]", "grooms_name"=>"Adam"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (38.7ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "Alyssa"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.5ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "Alyssa"], ["password_digest", "$2a$10$..bLPDMwWrLOCt1y8EpEEufkbJCxc7jUBJlkChmLNUsL5IWrn/LV6"], ["grooms_name", "Adam"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 41.5ms)
+
+
+  
+ArgumentError (too few arguments):
+  
+app/controllers/brides_controller.rb:17:in `format'
+app/controllers/brides_controller.rb:17:in `create'
+Started POST "/brides" for 127.0.0.1 at 2018-06-07 16:47:20 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ttry32mlI/76jCvby2X4coYedT4A995iKnHctPHjvEGhrMfNl6cPoaEqaiGiZLWNqb55wqOU2DJG8qWnAC9pTg==", "bride"=>{"name"=>"Alyssa", "password"=>"[FILTERED]", "grooms_name"=>"Adam"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "Alyssa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 1.6ms)
+
+
+  
+ArgumentError (too few arguments):
+  
+app/controllers/brides_controller.rb:19:in `format'
+app/controllers/brides_controller.rb:19:in `create'
+Started POST "/brides" for 127.0.0.1 at 2018-06-07 16:47:38 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ttry32mlI/76jCvby2X4coYedT4A995iKnHctPHjvEGhrMfNl6cPoaEqaiGiZLWNqb55wqOU2DJG8qWnAC9pTg==", "bride"=>{"name"=>"Alyssa", "password"=>"[FILTERED]", "grooms_name"=>"Adam"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "Alyssa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (3.0ms)
+Completed 200 OK in 115ms (Views: 17.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-07 16:47:41 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V5HY1JpSjMRclA+1paU7gfgjjSvInvi5zKI5fQT8Z+pA5+3GZFCgmwcyTk/MpHZ+14OB12v9/umgIUBu9TCy5Q==", "bride"=>{"name"=>"Alyssa", "password"=>"[FILTERED]", "grooms_name"=>"Adam"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "Alyssa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (1.9ms)
+Completed 200 OK in 83ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-07 16:48:03 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ttry32mlI/76jCvby2X4coYedT4A995iKnHctPHjvEGhrMfNl6cPoaEqaiGiZLWNqb55wqOU2DJG8qWnAC9pTg==", "bride"=>{"name"=>"Alyssa", "password"=>"[FILTERED]", "grooms_name"=>"Adam"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "Alyssa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (2.0ms)
+Completed 200 OK in 99ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-07 16:49:03 -0400
+  
+SyntaxError (/Users/Alyssa/rails_projects/bridesmaids-dresses/app/controllers/brides_controller.rb:17: syntax error, unexpected '(', expecting keyword_end
+      redirect_to '/brides'(@bride)
+                            ^):
+  
+app/controllers/brides_controller.rb:17: syntax error, unexpected '(', expecting keyword_end
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-07 16:49:16 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (3.6ms)
+Completed 200 OK in 156ms (Views: 10.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-07 16:49:21 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (1.6ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-07 16:49:26 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"diKkTOmNPQBjGkxPJ7fNTbUZ+6II0aNq4vp/xO6AM9ZhVJFeF48RXzi8DbVOtoCymrn3XquypTqOeQbXH0zm2Q==", "bride"=>{"name"=>"Alyssa", "password"=>"[FILTERED]", "grooms_name"=>"Adam"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "Alyssa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (1.6ms)
+Completed 200 OK in 91ms (Views: 6.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-07 16:49:39 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EltXEJljqGCgbjCOu1kQCNMTsCb5bLvqpckQ/en8+cMFLWICZ2GEP/vIcXTSWF33/LO82loPvbrJSmnuGDAszA==", "bride"=>{"name"=>"sjnsd", "password"=>"[FILTERED]", "grooms_name"=>"Adam"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "sjnsd"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.4ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "sjnsd"], ["password_digest", "$2a$10$RumU92FuILLIHiFJCKFYPu70NYrdvDBCsbLy93OlHZcfPCwrhGIYO"], ["grooms_name", "Adam"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides
+Completed 302 Found in 83ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/brides" for 127.0.0.1 at 2018-06-07 16:49:39 -0400
+Processing by BridesController#index as HTML
+  Rendering brides/index.html.erb
+  Rendered brides/index.html.erb (0.5ms)
+Completed 200 OK in 40ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-07 16:49:56 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (2.0ms)
+Completed 200 OK in 23ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-07 16:50:04 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iAwP5GW8Bmo5YJjD+gAbxIi++GqVM2TLtsWnfVQWJuafejr2m74qNWLG2TmTAVY7px70ljZQYpvaRt5updrz6Q==", "bride"=>{"name"=>"wergwerg", "password"=>"[FILTERED]", "grooms_name"=>"Adam"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "wergwerg"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.2ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "wergwerg"], ["password_digest", "$2a$10$zsoVrFMp6AxEq0IvFOmyDOEyFR1e8q422NXF0e1mBKU.ZB0EgKovO"], ["grooms_name", "Adam"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides
+Completed 302 Found in 82ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/brides" for 127.0.0.1 at 2018-06-07 16:50:05 -0400
+Processing by BridesController#index as HTML
+  Rendering brides/index.html.erb
+  Rendered brides/index.html.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-07 16:50:12 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (2.3ms)
+Completed 200 OK in 38ms (Views: 6.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-07 16:50:18 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WWAgxw7xpWykyM8o3g7kgNXDVgpnRG1cx8T/jt4FcZBOFhXV8POJM/9ujtK3D6l/+mNa9sQnawyrR4adL8mknw==", "bride"=>{"name"=>"fvfv", "password"=>"[FILTERED]", "grooms_name"=>"Adam"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "fvfv"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.3ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "fvfv"], ["password_digest", "$2a$10$TzCmp37Kk9UoHVK6Q0iHUOCssCHYMDmZc9IKab7vYoKnTiDbYKpsa"], ["grooms_name", "Adam"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/4
+Completed 302 Found in 86ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/brides/4" for 127.0.0.1 at 2018-06-07 16:50:18 -0400
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for BridesController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/brides/4" for 127.0.0.1 at 2018-06-07 16:51:22 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"4"}
+Redirected to http://localhost:3000/
+Filter chain halted as :authentication_required rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-07 16:51:23 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.7ms)
+Completed 200 OK in 30ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-07 16:51:26 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (3.0ms)
+Completed 200 OK in 57ms (Views: 8.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-07 16:51:36 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ntcovWwX54945UIC79Un+V0RUHNPgxlA0xWFO0+IzVaJoR2vkhXL0CNDA/iG1GoGcrFcj+zgHxC/lvwovkQYWQ==", "bride"=>{"name"=>"fdfwfa", "password"=>"[FILTERED]", "grooms_name"=>"wfwef"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "fdfwfa"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.3ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "fdfwfa"], ["password_digest", "$2a$10$.APEkKUrBVcsyokE6H1GROksNKyZueq2JWI6QVtX0PMzTkcL8znRi"], ["grooms_name", "wfwef"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/5
+Completed 302 Found in 85ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/brides/5" for 127.0.0.1 at 2018-06-07 16:51:36 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/
+Filter chain halted as :authentication_required rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-07 16:51:36 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.5ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+

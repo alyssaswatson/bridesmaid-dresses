@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :bridesmaids, only: [:new, :index, :show]
   end
 
-  resources :dresses, only: [:index, :new, :show]
+  resources :dresses, only: [:index, :new, :show, :create]
 
   root 'dresses#index'
 end

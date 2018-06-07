@@ -12,6 +12,16 @@ class BridesController < ApplicationController
     @bride.name = params[:bride][:name]
     @bride.password = params[:bride][:password]
     @bride.grooms_name = params[:bride][:grooms_name]
+    if @bride.save
+      session[:bride_id] = @bride.id
+      redirect_to bride_path(@bride)
+    else
+      render :new
+    end
+  end
+
+  def show
+    
   end
 
 end
