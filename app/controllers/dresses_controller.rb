@@ -13,6 +13,11 @@ class DressesController < ApplicationController
         @dress.link = params[:dress][:link]
         @dress.material = params[:dress][:material]
         @dress.length = params[:dress][:length]
+        if @dress.save
+            redirect_to dress_path(@dress)
+          else
+            render :new
+          end
     end
 
 
