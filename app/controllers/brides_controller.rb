@@ -1,4 +1,8 @@
 class BridesController < ApplicationController
+  def show
+    
+  end
+  
   def index
     @brides = Bride.all
   end
@@ -20,8 +24,6 @@ class BridesController < ApplicationController
     end
   end
 
-  def show
-    
-  end
+  
 
 end

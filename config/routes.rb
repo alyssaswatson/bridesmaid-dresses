@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :brides, only: [:index, :show, :new, :create] do
+  resources :brides, only: [:show, :index, :new, :create] do
     # nested resource for posts
     resources :bridesmaids, only: [:new, :index, :show]
   end
