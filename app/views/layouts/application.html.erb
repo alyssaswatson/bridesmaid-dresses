@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unique Bridesmaid Dress Creater</title>
+  </head>
+  <body>
+  <h1>Unique Bridesmaid Dress Creater</h1>
+    <ul>
+        <li><%= link_to 'View All Brides', 'brides' %></li>
+        <li><%= link_to 'View All Dresses', 'dresses' %></li>
+        <li><%= link_to 'New Bride Profile', 'brides/new' %></li>
+        <li><%= link_to 'Add a Dress', 'dresses/new' %></li>
+    </ul>
+
+    <!-- content -->
+    <div class="container"  role="main">
+      <%= yield %>
+    </div>
+  </body>
+</html>
