@@ -1,3 +1,7 @@
 <strong>Name:</strong> <%= @bride.name %>
 <br>
 <%= @bride.grooms_name %>
+<%= @bridesmaids.each do%>
+
+
+<%= link_to 'Add Bridesmaids', 'bridesmaids/new'%>
