@@ -3421,3 +3421,314 @@ Processing by BridesmaidsController#new as HTML
 Completed 200 OK in 130ms (Views: 76.0ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/brides/40/bridesmaids/new" for 127.0.0.1 at 2018-06-15 14:11:19 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"40"}
+  [1m[36mBride Load (14.0ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (193.7ms)
+Completed 200 OK in 467ms (Views: 274.8ms | ActiveRecord: 16.0ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:11:25 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/brides/40/bridesmaids"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:12:20 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/brides/40/bridesmaids"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:13:21 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SyLOFZzqIb54BJcncy9+FwB8h3f7EGaVYfWD14xFO4x+qhYnWQ26RBE44VphTlodCQEcym0Y8AvQOguq27r/8A==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /Users/Alyssa/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55)
+Completed 500 Internal Server Error in 447023ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/bridesmaids_controller.rb:14:in `create'
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:21:52 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SyLOFZzqIb54BJcncy9+FwB8h3f7EGaVYfWD14xFO4x+qhYnWQ26RBE44VphTlodCQEcym0Y8AvQOguq27r/8A==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+Completed 404 Not Found in 116ms (ActiveRecord: 7.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Bride without an ID):
+  
+app/controllers/bridesmaids_controller.rb:13:in `create'
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:22:34 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SyLOFZzqIb54BJcncy9+FwB8h3f7EGaVYfWD14xFO4x+qhYnWQ26RBE44VphTlodCQEcym0Y8AvQOguq27r/8A==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+Completed 500 Internal Server Error in 98724ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:24:14 -0400
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/bridesmaids_controller.rb:14:in `create'
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SyLOFZzqIb54BJcncy9+FwB8h3f7EGaVYfWD14xFO4x+qhYnWQ26RBE44VphTlodCQEcym0Y8AvQOguq27r/8A==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (29.8ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 471ms (Views: 71.9ms | ActiveRecord: 49.7ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:24:24 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SyLOFZzqIb54BJcncy9+FwB8h3f7EGaVYfWD14xFO4x+qhYnWQ26RBE44VphTlodCQEcym0Y8AvQOguq27r/8A==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (1.4ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 127ms (Views: 51.1ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:24:28 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u4c8cl726PP01/lO8r7CNFLz6WXhea1u9gU9o23FPBKOD+RAmxFzCZ3rjzPg3+Y+W45y2HdxO/BHyrXeOjr4bg==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (1.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 122ms (Views: 46.4ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:24:32 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lP/9TyRmjOzvuJCwbDG8jm/5DIVKHpZ6RGar6nQBvUChdyV94YEXFoaE5s1+UJiEZoSXONwWAOT1qSOXI/55PA==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (1.5ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 122ms (Views: 47.0ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:25:44 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H9wvgL0J1NmO8/YqVJnzuxiq+x22kDf7P0xU+Vtrx0wqVPeyeO5PI+fPgFdG+NexEddgoCCYoWWOg9yEDJQDMA==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (22.7ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 520ms (Views: 92.0ms | ActiveRecord: 44.6ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:26:01 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sivBmQMR7xNwiyikvHQMl/Ge0M2y/HeWvTUKFIq1E/GHoxmrxvZ06Rm3XtmuFSid+ONLcCT04QgM+oJp3UrXjQ==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (1.5ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 143ms (Views: 69.7ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:27:27 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tPoY4ik9iRrgqhK2wZ1/Ko6N50ctwoJHvXsr0rnVwfyBcsDQ7NoS4ImWZMvT/Fsgh/B8+rvKFNkMtKOv7ioFgA==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (31.5ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 360ms (ActiveRecord: 50.8ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/bridesmaids_controller.rb:15:in `create'
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:28:41 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tPoY4ik9iRrgqhK2wZ1/Ko6N50ctwoJHvXsr0rnVwfyBcsDQ7NoS4ImWZMvT/Fsgh/B8+rvKFNkMtKOv7ioFgA==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (25.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 120248ms (ActiveRecord: 38.1ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/bridesmaids_controller.rb:16:in `create'
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:30:49 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tPoY4ik9iRrgqhK2wZ1/Ko6N50ctwoJHvXsr0rnVwfyBcsDQ7NoS4ImWZMvT/Fsgh/B8+rvKFNkMtKOv7ioFgA==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (22.8ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 24016ms (ActiveRecord: 35.8ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/bridesmaids_controller.rb:16:in `create'
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:31:21 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tPoY4ik9iRrgqhK2wZ1/Ko6N50ctwoJHvXsr0rnVwfyBcsDQ7NoS4ImWZMvT/Fsgh/B8+rvKFNkMtKOv7ioFgA==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (18.8ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 489ms (Views: 80.6ms | ActiveRecord: 39.8ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:31:25 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mt2w80swISB8m2CsjMb+fFbh8ggQrQf0QrkacsxGhjavVWjBjte62hWnFtGep9p2X5xptYalkWrzdpIPm7lCSg==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (2.0ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 125ms (Views: 49.9ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:31:31 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0E9avgH4kyVW7w/HhAO21u2NtkqnrS3WAhn7ScmmPxblx4KMxB8I3z/TebqWYpLc5PAt9zGlu0iz1nM0nln7ag==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (1.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 126ms (Views: 50.6ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:31:50 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0E9avgH4kyVW7w/HhAO21u2NtkqnrS3WAhn7ScmmPxblx4KMxB8I3z/TebqWYpLc5PAt9zGlu0iz1nM0nln7ag==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (23.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 508ms (Views: 83.8ms | ActiveRecord: 45.3ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:31:54 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X6l4nsWNmJE0S9sIXUtgHk0n/l6c0qpBVLYUOJPGP4dqIaCsAGoDa113rXVPKkQURFpl4wraPN/leZxFxDn7+w==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (1.7ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 127ms (Views: 49.3ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:31:57 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fmIANFd/JGRv3HWO2PShbO7YeoKOtewuYm9+7oOuTftL6tgGkpi/ngbgA/PKlYVm56XhPxi9erDToPaT1FGJhw==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (1.5ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 131ms (Views: 54.9ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/brides/40/bridesmaids" for 127.0.0.1 at 2018-06-15 14:33:29 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CCvG21eOEeZ+Lr4L+24BAzjshLoQkH9EUqZq1Hvre+Y9ox7pkmmKHBcSyHbpDyUJMZEfB4aY6drjaeKpLBS/mg==", "bridesmaid"=>{"name"=>"Lauren"}, "commit"=>"Create Bridesmaid", "bride_id"=>"40"}
+  [1m[36mBride Load (31.6ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
