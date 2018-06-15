@@ -1,0 +1,9 @@
+Create your bridesmaids!
+<%= form_for(@bridesmaid) do |f| %>
+    Name:
+    <%= f.text_field :first_bridesmaid_name, placeholder: "Enter first bridesmaids name" %><br>
+    <%= f.text_field :second_bridesmaid_name, placeholder: "Enter second bridesmaids name" %><br>
+    <%= f.text_field :third_bridesmaid_name, placeholder: "Enter third bridesmaids name" %><br>
+    <%= f.text_field :forth_bridesmaid_name, placeholder: "Enter forth bridesmaids name" %><br>
+    <%= f.submit %>
+<% end %>
