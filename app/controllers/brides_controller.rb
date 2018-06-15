@@ -1,6 +1,7 @@
 class BridesController < ApplicationController
   def show
-    
+    @bride = Bride.find(params[:id])
+    #byebug
   end
   
   def index
@@ -17,6 +18,7 @@ class BridesController < ApplicationController
     @bride.password = params[:bride][:password]
     @bride.grooms_name = params[:bride][:grooms_name]
     if @bride.save
+      #byebug
       session[:bride_id] = @bride.id
       redirect_to bride_path(@bride)
     else

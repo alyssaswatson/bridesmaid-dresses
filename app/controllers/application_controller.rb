@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :authentication_required, except: [:index, :create, :new]
+  #before_action :authentication_required, except: [:index, :create, :new]
 
   def authentication_required
     if !logged_in?

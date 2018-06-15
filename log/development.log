@@ -1388,3 +1388,649 @@ true by adding the following to your application.rb file:
 
   Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
  (called from require at /Users/Alyssa/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55)
+Started GET "/" for 127.0.0.1 at 2018-06-11 16:34:41 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (1.8ms)
+Completed 200 OK in 104ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-11 16:34:51 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (151.1ms)
+Completed 200 OK in 194ms (Views: 157.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:35:02 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cczbCCanoV/mb5McT/E8yf2sSzrb09Qdyq1bMFz0xOtmuu4a2KWNAL3J0uYm8HE20gxHxniw0k2mLiIjrTgR5A==", "bride"=>{"name"=>"ltl", "password"=>"[FILTERED]", "grooms_name"=>"itil9"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (13.7ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "ltl"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.6ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "ltl"], ["password_digest", "$2a$10$AZ29dKZSyW/NMi1fOUtGT.TRFFoc610/2XVj/V9FDIclVMPUGkouy"], ["grooms_name", "itil9"]]
+  [1m[35m (21.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/13
+Completed 302 Found in 139ms (ActiveRecord: 35.9ms)
+
+
+Started GET "/brides/13" for 127.0.0.1 at 2018-06-11 16:35:02 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"13"}
+Redirected to http://localhost:3000/
+Filter chain halted as :authentication_required rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-11 16:35:02 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.5ms)
+Completed 200 OK in 16ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-11 16:36:31 -0400
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-11 16:36:41 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (2.8ms)
+Completed 200 OK in 41ms (Views: 11.0ms | ActiveRecord: 1.1ms)
+
+
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (1.9ms)
+Completed 200 OK in 20ms (Views: 6.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-11 16:36:49 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (2.2ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:36:56 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9lDYUkk/sYvpVBNLZMZUpcrknz2AeDwk+LNrJSBMtEfhJu1Atz2d1LLyUrENxxla5USTwSMbOnSUMBI20YBhSA==", "bride"=>{"name"=>"lknl", "password"=>"[FILTERED]", "grooms_name"=>";m;"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (12.9ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "lknl"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.4ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "lknl"], ["password_digest", "$2a$10$XUn19d/H2F4pqQJxc91LVu/i8tbIRUZm/OhvsAIR3fNOGjAAsG.eS"], ["grooms_name", ";m;"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/14
+Completed 302 Found in 96ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/brides/14" for 127.0.0.1 at 2018-06-11 16:36:56 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"14"}
+Redirected to http://localhost:3000/
+Filter chain halted as :authentication_required rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-11 16:36:56 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.6ms)
+Completed 200 OK in 59ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-11 16:37:19 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (95.3ms)
+Completed 200 OK in 165ms (Views: 124.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:37:30 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CDGATkwF1BfhyUyLqXo2cb97WuTZI8d4APpwazcXM0EfR7Vcsgf4SLpvDXHAe3uOkNtWGHpAwShseQl4xtvmTg==", "bride"=>{"name"=>"knl", "password"=>"[FILTERED]", "grooms_name"=>"lkmlkn"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (15.0ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "knl"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.4ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "knl"], ["password_digest", "$2a$10$Y3F81wJyJcnaQbW5O/osB.iHGP93EXxJzm7/iyP//lJvQxkZd6dIe"], ["grooms_name", "lkmlkn"]]
+  [1m[35m (17.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/15
+Completed 302 Found in 128ms (ActiveRecord: 32.7ms)
+
+
+Started GET "/brides/15" for 127.0.0.1 at 2018-06-11 16:37:30 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"15"}
+Redirected to http://localhost:3000/
+Filter chain halted as :authentication_required rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-11 16:37:30 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.9ms)
+Completed 200 OK in 72ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-11 16:38:57 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (2.6ms)
+Completed 200 OK in 39ms (Views: 8.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:39:15 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DWpC0OiOvNmaOU0HX0yOwBlTPuUobnFBYPzb08rusgcaHHfCFoyQhsGfDP02TcM/NvMyGYsNdxEMf6LAOyJnCA==", "bride"=>{"name"=>"jk,", "password"=>"[FILTERED]", "grooms_name"=>"jkhj"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "jk,"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.3ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "jk,"], ["password_digest", "$2a$10$w/6NqTIi29sYqZTipEqA6uQvDPteKYlG3haNE12YJo2Qcb9E5Cdh6"], ["grooms_name", "jkhj"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/16
+Completed 302 Found in 83ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/brides/16" for 127.0.0.1 at 2018-06-11 16:39:15 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"16"}
+Redirected to http://localhost:3000/
+Filter chain halted as :authentication_required rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-11 16:39:15 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.5ms)
+Completed 200 OK in 66ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-11 16:44:58 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (4.8ms)
+Completed 200 OK in 59ms (Views: 10.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:45:06 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mb43a12r0iMx2jMBvoDhMl5/YmC0uqlVyoJVOUU2uNkmyAJ5o6n+fGp8cvvXgazNcd9unBfZrwWmASwqtPpt1g==", "bride"=>{"name"=>"cccc", "password"=>"[FILTERED]", "grooms_name"=>"cccc"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (14.3ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "cccc"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.3ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "cccc"], ["password_digest", "$2a$10$ccKDQki6rmR9eJ.ICXx6XOO3askwDQPkRmMgXEwgEbIAJce0UoIMu"], ["grooms_name", "cccc"]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 28.4ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"shows", :controller=>"brides"}):
+  
+app/controllers/brides_controller.rb:21:in `create'
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:45:26 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mb43a12r0iMx2jMBvoDhMl5/YmC0uqlVyoJVOUU2uNkmyAJ5o6n+fGp8cvvXgazNcd9unBfZrwWmASwqtPpt1g==", "bride"=>{"name"=>"cccc", "password"=>"[FILTERED]", "grooms_name"=>"cccc"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (5.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "cccc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (2.9ms)
+Completed 200 OK in 148ms (Views: 23.7ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:45:29 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6us1OfY5D6Cj79mfSsqOh7c1nUEx2o/CpNjIv+28k779nQArCDsj//hJmGUjy8N4mJWRvZK5iZLIW7GsHHBGsQ==", "bride"=>{"name"=>"cccc", "password"=>"[FILTERED]", "grooms_name"=>"cccc"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "cccc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (1.7ms)
+Completed 200 OK in 84ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:45:32 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AD1tT80t2KEkpR1JxHc5pTWLledH2J8YSj1IDF9+RV8XS1hdMy/0/n8DXLOtdnRaGiuZG+S7mUgmvjEfrrKQUA==", "bride"=>{"name"=>"ccccd", "password"=>"[FILTERED]", "grooms_name"=>"cccc"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "ccccd"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.5ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "ccccd"], ["password_digest", "$2a$10$ZeqrWpK7IpEb5tBNioH85OKFTBD9DXKk09T7Cyxhxd0yKi3TrlWVK"], ["grooms_name", "cccc"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"brides"}):
+  
+app/controllers/brides_controller.rb:21:in `create'
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:46:54 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AD1tT80t2KEkpR1JxHc5pTWLledH2J8YSj1IDF9+RV8XS1hdMy/0/n8DXLOtdnRaGiuZG+S7mUgmvjEfrrKQUA==", "bride"=>{"name"=>"ccccd", "password"=>"[FILTERED]", "grooms_name"=>"cccc"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (19.6ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "ccccd"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (2.6ms)
+Completed 200 OK in 161ms (Views: 23.3ms | ActiveRecord: 20.7ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:46:58 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G7uxPEGic6y/siKTBIljPSYHAgC8vswX3nEcA7R9Mw0MzYQuv6Bf8+QUY2ltiC7CCacO/B/dykey8mUQRbHmAg==", "bride"=>{"name"=>"ccccd", "password"=>"[FILTERED]", "grooms_name"=>"ccccg"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "ccccd"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (1.7ms)
+Completed 200 OK in 86ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:47:04 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0gKFLEPT2zAFe59fgEDBh16JfGjACnZaf7+TjMpDkGzFdLA+vdH3b17d3qXpQYx4cSlwlGNpcAoTPOqfO49FYw==", "bride"=>{"name"=>"ccccdg", "password"=>"[FILTERED]", "grooms_name"=>"ccccg"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "ccccdg"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.3ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "ccccdg"], ["password_digest", "$2a$10$G4PlduQjYsTp2kJcdZL2cua1jaNUX2abEczkUsuhIfrS4ZMf9Iesm"], ["grooms_name", "ccccg"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show/:id", :controller=>"brides"}):
+  
+app/controllers/brides_controller.rb:21:in `create'
+Started POST "/brides" for 127.0.0.1 at 2018-06-11 16:50:51 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0gKFLEPT2zAFe59fgEDBh16JfGjACnZaf7+TjMpDkGzFdLA+vdH3b17d3qXpQYx4cSlwlGNpcAoTPOqfO49FYw==", "bride"=>{"name"=>"ccccdgm", "password"=>"[FILTERED]", "grooms_name"=>"ccccg"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (39.8ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "ccccdgm"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.6ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "ccccdgm"], ["password_digest", "$2a$10$pQsCrI4FEvQq6lthKfC1/OWQrmuqKzG8CY88UclIqJu.mPCplM39W"], ["grooms_name", "ccccg"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 43.3ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"brides"}):
+  
+app/controllers/brides_controller.rb:21:in `create'
+Started GET "/" for 127.0.0.1 at 2018-06-15 10:22:24 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (2.9ms)
+Completed 200 OK in 224ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-15 10:22:33 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (219.5ms)
+Completed 200 OK in 299ms (Views: 229.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:22:45 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nVzl57VEIuLGC0em4eDIDlspX1AttcDOz2+uTXBFzlCKKtD1S0YOvZ2tBlyI4YXxdIlTrI7Wxp6j7NdegYkbXw==", "bride"=>{"name"=>"Ashley", "password"=>"[FILTERED]", "grooms_name"=>"drgtdrg"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (14.4ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "Ashley"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.4ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "Ashley"], ["password_digest", "$2a$10$e9zn/lIPpe2A9caASo5XEu69bPhJQtH1rgGKh5yCQ7fj6AlavExBm"], ["grooms_name", "drgtdrg"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/21
+Completed 302 Found in 160ms (ActiveRecord: 16.9ms)
+
+
+Started GET "/brides/21" for 127.0.0.1 at 2018-06-15 10:22:45 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/
+Filter chain halted as :authentication_required rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-15 10:22:45 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.8ms)
+Completed 200 OK in 22ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-15 10:23:29 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (1.4ms)
+Completed 200 OK in 32ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-15 10:23:33 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (6.0ms)
+Completed 200 OK in 44ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:23:39 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jdeEvi79RVnl1OCUloE63O6xRPFqZZy0ZMSrfpVxc5GaobGs0P9pBr5yoW7/gHcjwRFIDckGmuQIR9JtZL2mng==", "bride"=>{"name"=>"srt", "password"=>"[FILTERED]", "grooms_name"=>"rty"}, "commit"=>"Create Bride"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "srt"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.5ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "srt"], ["password_digest", "$2a$10$6MRhHzmc98BsBe8avMQi9eQrmhIR45PPEd8yZhp502aAvIvZ58Yfm"], ["grooms_name", "rty"]]
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/22
+Completed 302 Found in 107ms (ActiveRecord: 12.2ms)
+
+
+Started GET "/brides/22" for 127.0.0.1 at 2018-06-15 10:23:39 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"22"}
+Redirected to http://localhost:3000/
+Filter chain halted as :authentication_required rendered or redirected
+Completed 302 Found in 28ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-15 10:23:39 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.8ms)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:24:31 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jdeEvi79RVnl1OCUloE63O6xRPFqZZy0ZMSrfpVxc5GaobGs0P9pBr5yoW7/gHcjwRFIDckGmuQIR9JtZL2mng==", "bride"=>{"name"=>"srt", "password"=>"[FILTERED]", "grooms_name"=>"rty"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (24.1ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "srt"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (3.9ms)
+Completed 200 OK in 221ms (Views: 24.3ms | ActiveRecord: 25.2ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:24:51 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"plZAaWnB3twvTrmKne/eysJH2vpttQCQk138IzQ04UKxIHV7l8Pyg3To+HD07pM17efWBs7WBsD/3oUwxfg0TQ==", "bride"=>{"name"=>"srtjh", "password"=>"[FILTERED]", "grooms_name"=>"rty"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "srtjh"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.3ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "srtjh"], ["password_digest", "$2a$10$TZAowJXLppKfBun49KBe1OHQhyWnNdbmDtL0KteG2oC1f9F4Il7H."], ["grooms_name", "rty"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /Users/Alyssa/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55)
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-15 10:30:40 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (242.6ms)
+Completed 200 OK in 504ms (Views: 435.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:30:54 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z4mCQ980XVUEI34BsKQ1jpwY/s2PdDxyR8s4uTVZMcXY/7dRITZxCl+FP/vZpXhxs7jyMSwXOiIrSEGqxJXkyg==", "bride"=>{"name"=>"Alyssawe", "password"=>"[FILTERED]", "grooms_name"=>"wsty"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (14.7ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "Alyssawe"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.6ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "Alyssawe"], ["password_digest", "$2a$10$F83fMSpW295eJSBYrLFWauOWd4xSErZD5mJbzYiAyolyMZp8S82km"], ["grooms_name", "wsty"]]
+  [1m[35m (21.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/brides" for 127.0.0.1 at 2018-06-15 10:33:22 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BridesController#index as HTML
+  Rendering brides/index.html.erb
+  Rendered brides/index.html.erb (1.8ms)
+Completed 200 OK in 88ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-15 10:33:45 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (107.8ms)
+Completed 200 OK in 141ms (Views: 113.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:33:52 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5QY5eEpIveIgXCSVV2/rLn+6MnvZdVDZWQ295wL5XebycAxqtEqRvXv6ZW8+bqbRUBo+h3oWVok1jsT08zWI6Q==", "bride"=>{"name"=>"aisefha", "password"=>"[FILTERED]", "grooms_name"=>"drgart"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (14.6ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "aisefha"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.4ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "aisefha"], ["password_digest", "$2a$10$YSaDgKdcjrxYeKUXNGNLouFwMTDH/1yxxM9F2EIG5OfarkgRQeh3y"], ["grooms_name", "drgart"]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/25
+Completed 302 Found in 126ms (ActiveRecord: 28.9ms)
+
+
+Started GET "/brides/25" for 127.0.0.1 at 2018-06-15 10:33:52 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"25"}
+Redirected to http://localhost:3000/
+Filter chain halted as :authentication_required rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-15 10:33:52 -0400
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb
+  Rendered dresses/index.html.erb (0.7ms)
+Completed 200 OK in 64ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:37:17 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5QY5eEpIveIgXCSVV2/rLn+6MnvZdVDZWQ295wL5XebycAxqtEqRvXv6ZW8+bqbRUBo+h3oWVok1jsT08zWI6Q==", "bride"=>{"name"=>"aisefhaw", "password"=>"[FILTERED]", "grooms_name"=>"drgart"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (23.8ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "aisefhaw"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.4ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "aisefhaw"], ["password_digest", "$2a$10$./0i.3FComZGiEoUWQLaf.fA6CGAOi2IaZhdZk4s3xNCybWaCClWa"], ["grooms_name", "drgart"]]
+  [1m[35m (18.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/26
+Completed 302 Found in 172ms (ActiveRecord: 43.7ms)
+
+
+Started GET "/brides/26" for 127.0.0.1 at 2018-06-15 10:37:28 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"26"}
+Completed 500 Internal Server Error in 321ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `root_path' for #<BridesController:0x007fed496a96e8>):
+  
+app/controllers/application_controller.rb:7:in `authentication_required'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /Users/Alyssa/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55)
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:38:34 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5QY5eEpIveIgXCSVV2/rLn+6MnvZdVDZWQ295wL5XebycAxqtEqRvXv6ZW8+bqbRUBo+h3oWVok1jsT08zWI6Q==", "bride"=>{"name"=>"aisefhaw", "password"=>"[FILTERED]", "grooms_name"=>"drgart"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (23.8ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "aisefhaw"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (3.0ms)
+Completed 200 OK in 176ms (Views: 22.3ms | ActiveRecord: 24.9ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:38:39 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RkFM3flmPKb+zcx9/zw3qV+V6p4vhxa6v6PZE/qZWZVRN3nPB2QQ+aVrjYeWPXpWcDXmYozkEOrTIKAAC1WMmg==", "bride"=>{"name"=>"aisefhawm", "password"=>"[FILTERED]", "grooms_name"=>"drgart"}, "commit"=>"Create Bride"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "aisefhawm"], ["LIMIT", 1]]
+  [1m[36mBride Create (33.2ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "aisefhawm"], ["password_digest", "$2a$10$h3fhJVnNfHcsqDkdzLXVFe78XwM8XphPKpq.pL2PPH2DSj6pbwOum"], ["grooms_name", "drgart"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/27
+Completed 302 Found in 123ms (ActiveRecord: 34.8ms)
+
+
+Started GET "/brides/27" for 127.0.0.1 at 2018-06-15 10:38:39 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:39:46 -0400
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:40:21 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5QY5eEpIveIgXCSVV2/rLn+6MnvZdVDZWQ295wL5XebycAxqtEqRvXv6ZW8+bqbRUBo+h3oWVok1jsT08zWI6Q==", "bride"=>{"name"=>"aisefhawmmmmnm", "password"=>"[FILTERED]", "grooms_name"=>"drgart"}, "commit"=>"Create Bride"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (14.6ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "aisefhawmmmmnm"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.4ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "aisefhawmmmmnm"], ["password_digest", "$2a$10$r5rzOrOt1JtLXrK7ONDlSeEAy8XAzp2IKbfKGuRU2kKhilx.Sqmki"], ["grooms_name", "drgart"]]
+  [1m[35m (21.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/28
+Completed 302 Found in 210ms (ActiveRecord: 36.8ms)
+
+
+Started GET "/brides/28" for 127.0.0.1 at 2018-06-15 10:40:23 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"28"}
+  Rendering brides/show.html.erb
+  Rendered brides/show.html.erb (15.5ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <strong>Name:</strong> <%= @bride.name %>
+    2: <br>
+    3: <%= @bride.grooms_name %>
+  
+app/views/brides/show.html.erb:1:in `_app_views_brides_show_html_erb___3031805750382403453_70352065944360'
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:40:48 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5QY5eEpIveIgXCSVV2/rLn+6MnvZdVDZWQ295wL5XebycAxqtEqRvXv6ZW8+bqbRUBo+h3oWVok1jsT08zWI6Q==", "bride"=>{"name"=>"aisefhawmmmmnm", "password"=>"[FILTERED]", "grooms_name"=>"drgart"}, "commit"=>"Create Bride"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "aisefhawmmmmnm"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brides/new.html.erb
+  Rendered brides/new.html.erb (51.8ms)
+Completed 200 OK in 381ms (Views: 75.4ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-15 10:40:53 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8zIVzC/FT9wxLSwq43J69YWYxFwIMcpDvdaPWjI+NxjkRCDe0cdjg2qLbdCKczcKqjjIoKtSzBPRVfZJw/LiFw==", "bride"=>{"name"=>"aisefhawmmmmnm,", "password"=>"[FILTERED]", "grooms_name"=>"drgart"}, "commit"=>"Create Bride"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "aisefhawmmmmnm,"], ["LIMIT", 1]]
+  [1m[36mBride Create (0.4ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "aisefhawmmmmnm,"], ["password_digest", "$2a$10$qs34E.xLUtzKnpdRNsF36eeGWOATyfzhf7GFBQO8y0fxLl8NavBaG"], ["grooms_name", "drgart"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/29
+Completed 302 Found in 81ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/brides/29" for 127.0.0.1 at 2018-06-15 10:40:53 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mBride Load (0.4ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering brides/show.html.erb
+  Rendered brides/show.html.erb (0.6ms)
+Completed 200 OK in 42ms (Views: 6.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-15 10:45:30 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (10.1ms)
+Completed 200 OK in 92ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
