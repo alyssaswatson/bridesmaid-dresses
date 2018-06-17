@@ -2,5 +2,7 @@ Create a bridesmaid!
 <%= form_for ([@bridesmaid.bride, @bridesmaid]) do |f| %>
     Name:
     <%= f.text_field :name, placeholder: "Enter bridesmaids name" %><br>
+    <%= @bride.id %><br>
+    <%= f.hidden_field :bride_id, value: @bride.id %>
     <%= f.submit %>
 <% end %>
