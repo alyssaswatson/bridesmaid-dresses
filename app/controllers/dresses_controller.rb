@@ -14,11 +14,16 @@ class DressesController < ApplicationController
         @dress.material = params[:dress][:material]
         @dress.length = params[:dress][:length]
         if @dress.save
-            
+            redirect_to dress_path(@dress)
           else
             render :new
           end
     end
+
+    def show
+        @dress = Dress.find(params[:id])
+    end
+
 
 
 end
