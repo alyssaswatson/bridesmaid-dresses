@@ -3,6 +3,8 @@ class BridesmaidsController < ApplicationController
     def new
         @bride = Bride.find(params[:bride_id])
         @bridesmaid = @bride.bridesmaids.build
+        @dress = Dress.new
+        byebug
     end
 
     def create

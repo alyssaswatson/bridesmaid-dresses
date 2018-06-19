@@ -5187,3 +5187,288 @@ app/controllers/bridesmaids_controller.rb:12:in `create'
 (byebug):1:in `exit'
 (byebug):1:in `create'
 app/controllers/bridesmaids_controller.rb:12:in `create'
+Started GET "/brides" for 127.0.0.1 at 2018-06-19 10:12:03 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BridesController#index as HTML
+  Rendering brides/index.html.erb within layouts/application
+  Rendered brides/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 142ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/45" for 127.0.0.1 at 2018-06-19 10:12:18 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mBride Load (25.0ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering brides/show.html.erb within layouts/application
+  [1m[36mBridesmaid Load (0.5ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 45]]
+  Rendered brides/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 146ms (Views: 12.4ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/brides/45/bridesmaids/new" for 127.0.0.1 at 2018-06-19 10:12:21 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"45"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (225.4ms)
+Completed 200 OK in 302ms (Views: 229.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/brides/45" for 127.0.0.1 at 2018-06-19 10:16:13 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering brides/show.html.erb within layouts/application
+  [1m[36mBridesmaid Load (0.4ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 45]]
+  Rendered brides/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:16:14 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb within layouts/application
+  Rendered dresses/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:19:59 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb within layouts/application
+  Rendered dresses/new.html.erb within layouts/application (47.5ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `bridesmaid_name' for #<Dress id: nil, link: nil, material: nil, length: nil>
+Did you mean?  bridesmaids
+               bridesmaid_ids
+               bridesmaids=
+               bride_ids
+               bridesmaid_ids=):
+     7:     Dress Length:
+     8:     <%= f.text_field :length, placeholder: "Enter the dress length" %><br>
+     9:     Bridesmaid:
+    10:     <%= f.text_field :bridesmaid_name, placeholder: "Enter the name of the bridesmaid" %><br>
+    11:     <%= f.submit %>
+    12: <% end %>
+  
+app/views/dresses/new.html.erb:10:in `block in _app_views_dresses_new_html_erb___1478904875162292390_70298383506760'
+app/views/dresses/new.html.erb:2:in `_app_views_dresses_new_html_erb___1478904875162292390_70298383506760'
+Started GET "/brides/45" for 127.0.0.1 at 2018-06-19 10:37:49 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mBride Load (11.9ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering brides/show.html.erb within layouts/application
+  [1m[36mBridesmaid Load (0.3ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 45]]
+  Rendered brides/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 122ms (Views: 23.4ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:37:52 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb within layouts/application
+  Rendered dresses/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 57ms (Views: 11.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:38:38 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb within layouts/application
+  Rendered dresses/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 19ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:38:41 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb within layouts/application
+  Rendered dresses/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:38:44 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb within layouts/application
+  Rendered dresses/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:39:57 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb within layouts/application
+  Rendered dresses/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 30ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:41:51 -0400
+Processing by DressesController#new as HTML
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `bridesmaid' for #<Dress id: nil, link: nil, material: nil, length: nil>
+Did you mean?  bridesmaids
+               bridesmaids=):
+  
+app/controllers/dresses_controller.rb:9:in `new'
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:42:02 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb within layouts/application
+  Rendered dresses/new.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    10:         <%= f.fields_for :bridesmaids do |bridesmaid| %>
+    11:             Name:
+    12:             <%= bridesmaid.text_field :name, placeholder: "Enter bridesmaids name" %><br>
+    13:             <%= bridesmaid.hidden_field :bride_id, value: @bride.id %>
+    14:         <% end %>
+    15:     <%= f.submit %>
+    16: <% end %>
+  
+app/views/dresses/new.html.erb:13:in `block (2 levels) in _app_views_dresses_new_html_erb___1478904875162292390_70298383930640'
+app/views/dresses/new.html.erb:10:in `block in _app_views_dresses_new_html_erb___1478904875162292390_70298383930640'
+app/views/dresses/new.html.erb:2:in `_app_views_dresses_new_html_erb___1478904875162292390_70298383930640'
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:43:02 -0400
+Processing by DressesController#new as HTML
+Completed 404 Not Found in 85ms (ActiveRecord: 2.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Bride without an ID):
+  
+app/controllers/dresses_controller.rb:10:in `new'
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:43:33 -0400
+Processing by DressesController#new as HTML
+Completed 500 Internal Server Error in 266ms (ActiveRecord: 2.0ms)
+
+
+  
+NameError (undefined local variable or method `curent_user' for #<DressesController:0x007fdf3fc13cb8>
+Did you mean?  current_user):
+  
+app/controllers/dresses_controller.rb:10:in `new'
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:43:47 -0400
+Processing by DressesController#new as HTML
+  Rendering dresses/new.html.erb within layouts/application
+  Rendered dresses/new.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    10:         <%= f.fields_for :bridesmaids do |bridesmaid| %>
+    11:             Name:
+    12:             <%= bridesmaid.text_field :name, placeholder: "Enter bridesmaids name" %><br>
+    13:             <%= bridesmaid.hidden_field :bride_id, value: @bride.id %>
+    14:         <% end %>
+    15:     <%= f.submit %>
+    16: <% end %>
+  
+app/views/dresses/new.html.erb:13:in `block (2 levels) in _app_views_dresses_new_html_erb___1478904875162292390_70298410648560'
+app/views/dresses/new.html.erb:10:in `block in _app_views_dresses_new_html_erb___1478904875162292390_70298410648560'
+app/views/dresses/new.html.erb:2:in `_app_views_dresses_new_html_erb___1478904875162292390_70298410648560'
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-19 10:44:44 -0400
+Processing by DressesController#new as HTML
+Completed 500 Internal Server Error in 15235798ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/brides/45/bridesmaids/new" for 127.0.0.1 at 2018-06-19 14:58:40 -0400
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `new'
+app/controllers/dresses_controller.rb:12:in `new'
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"45"}
+  [1m[36mBride Load (17.9ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 336ms (Views: 76.3ms | ActiveRecord: 27.2ms)
+
+
+Started GET "/brides/45" for 127.0.0.1 at 2018-06-19 14:58:55 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mBride Load (2.0ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering brides/show.html.erb within layouts/application
+  [1m[36mBridesmaid Load (1.7ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 45]]
+  Rendered brides/show.html.erb within layouts/application (57.1ms)
+Completed 200 OK in 358ms (Views: 78.5ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/brides/45/bridesmaids/new" for 127.0.0.1 at 2018-06-19 14:58:59 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"45"}
+  [1m[36mBride Load (1.4ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 520085ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/brides/brides/new" for 127.0.0.1 at 2018-06-19 15:07:39 -0400
+  
+  
+SystemExit (exit):
+ActionController::RoutingError (No route matches [GET] "/brides/brides/new"):
+  
+  
+(byebug):1:in `exit'
+(byebug):1:in `new'
+app/controllers/bridesmaids_controller.rb:8:in `new'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/brides/new" for 127.0.0.1 at 2018-06-19 15:07:54 -0400
+Processing by BridesController#new as HTML
+  Rendering brides/new.html.erb within layouts/application
+  Rendered brides/new.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 300ms (Views: 78.2ms | ActiveRecord: 8.0ms)
+
+
+Started POST "/brides" for 127.0.0.1 at 2018-06-19 15:08:04 -0400
+Processing by BridesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2RRBCxtXgygdpNoaywNXLaK0uLFAzo8Qs1+JO/8wp4rOYnQZ5VWvd0YCm+CiAhrSjRS0TeOtiUDf3PAoDvxyhQ==", "bride"=>{"name"=>"3535235", "password"=>"[FILTERED]", "grooms_name"=>"rtyryry"}, "commit"=>"Create Bride"}
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Exists (42.5ms)[0m  [1m[34mSELECT  1 AS one FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "3535235"], ["LIMIT", 1]]
+  [1m[36mBride Create (9.9ms)[0m  [1m[32mINSERT INTO "brides" ("name", "password_digest", "grooms_name") VALUES (?, ?, ?)[0m  [["name", "3535235"], ["password_digest", "$2a$10$O31MHZzHjrgQjGEk160mEOLf8ME2D9VhdsbTi0Bvf6lfBnMLST8me"], ["grooms_name", "rtyryry"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBride Load (2.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]

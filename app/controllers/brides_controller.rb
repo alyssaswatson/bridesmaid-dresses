@@ -20,7 +20,8 @@ class BridesController < ApplicationController
     @bride.grooms_name = params[:bride][:grooms_name]
     if @bride.save
       #byebug
-      session[:bride_id] = @bride.id
+      current_user
+      byebug
       redirect_to bride_path(@bride)
     else
       render :new
