@@ -3,5 +3,8 @@ Create a bridesmaid!
     Name:
     <%= f.text_field :name, placeholder: "Enter bridesmaids name" %><br>
     <%= f.hidden_field :bride_id, value: @bride.id %>
+    <%= f.label :dress_id, 'Pick a Dress' %>
+    <%= collection_select(:dress, :id, Dress.all, :id, :link,
+   {:prompt => 'Pick a Dress'}) %>
     <%= f.submit %>
 <% end %>

@@ -5606,3 +5606,150 @@ Processing by DressesController#show as HTML
 Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/dresses/brides" for 127.0.0.1 at 2018-06-20 13:27:55 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"brides"}
+  [1m[36mDress Load (23.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 91ms (ActiveRecord: 24.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Dress with 'id'=brides):
+  
+app/controllers/dresses_controller.rb:24:in `show'
+Started GET "//brides" for 127.0.0.1 at 2018-06-20 13:28:23 -0400
+Processing by BridesController#index as HTML
+  Rendering brides/index.html.erb within layouts/application
+  Rendered brides/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 97ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brides/45" for 127.0.0.1 at 2018-06-20 13:28:35 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mBride Load (32.0ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering brides/show.html.erb within layouts/application
+  [1m[36mBridesmaid Load (0.3ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 45]]
+  Rendered brides/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 143ms (Views: 11.0ms | ActiveRecord: 33.6ms)
+
+
+Started GET "/brides/45/bridesmaids/new" for 127.0.0.1 at 2018-06-20 13:28:40 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"45"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 22106ms (ActiveRecord: 0.6ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `new'
+app/controllers/bridesmaids_controller.rb:8:in `new'
+Started GET "/brides/45/bridesmaids/new" for 127.0.0.1 at 2018-06-20 13:29:06 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"45"}
+  [1m[36mBride Load (2.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 25015ms (ActiveRecord: 2.2ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `new'
+app/controllers/bridesmaids_controller.rb:8:in `new'
+Started GET "/brides/45/bridesmaids/new" for 127.0.0.1 at 2018-06-20 13:29:35 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"45"}
+  [1m[36mBride Load (24.7ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (1.4ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  Rendered bridesmaids/new.html.erb within layouts/application (122.5ms)
+Completed 500 Internal Server Error in 668ms (ActiveRecord: 45.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Dress with 'id'=all):
+  
+app/views/bridesmaids/new.html.erb:7:in `block in _app_views_bridesmaids_new_html_erb__4588761963244030045_70189026056440'
+app/views/bridesmaids/new.html.erb:2:in `_app_views_bridesmaids_new_html_erb__4588761963244030045_70189026056440'
+Started GET "/brides/45/bridesmaids/new" for 127.0.0.1 at 2018-06-20 13:30:22 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"45"}
+  [1m[36mBride Load (1.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/new.html.erb within layouts/application (857.4ms)
+Completed 500 Internal Server Error in 923ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `dress_id' for #<Dress id: nil, link: nil, material: nil, length: nil>):
+    4:     <%= f.text_field :name, placeholder: "Enter bridesmaids name" %><br>
+    5:     <%= f.hidden_field :bride_id, value: @bride.id %>
+    6:     <%= f.label :dress_id, 'Pick a Dress' %>
+    7:     <%= collection_select(:dress, :dress_id, Dress.all, :id, :link,
+    8:    {:prompt => 'Please select the author of this post'}) %>
+    9:     <%= f.submit %>
+   10: <% end %>
+  
+app/views/bridesmaids/new.html.erb:7:in `block in _app_views_bridesmaids_new_html_erb__4588761963244030045_70188995150680'
+app/views/bridesmaids/new.html.erb:2:in `_app_views_bridesmaids_new_html_erb__4588761963244030045_70188995150680'
+Started GET "/brides/45/bridesmaids/new" for 127.0.0.1 at 2018-06-20 13:30:48 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"45"}
+  [1m[36mBride Load (1.5ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (24.8ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/new.html.erb within layouts/application (399.7ms)
+Completed 200 OK in 473ms (Views: 405.0ms | ActiveRecord: 26.2ms)
+
+
+Started GET "/brides/45/bridesmaids/new" for 127.0.0.1 at 2018-06-20 13:31:29 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"45"}
+  [1m[36mBride Load (1.8ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (1.7ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/new.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 120ms (Views: 75.9ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/brides/45/bridesmaids" for 127.0.0.1 at 2018-06-20 13:32:03 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Rz69P1F+4foMCcHEq6/BzziXXAVzD56h74WfuCyWajHiTtVU8DAt7avcHaXfe/0ekiIi5FilWKFCgJLd3Eqpw==", "bridesmaid"=>{"name"=>"Lauren", "bride_id"=>"45"}, "dress"=>{"id"=>"1"}, "commit"=>"Create Bridesmaid", "bride_id"=>"45"}
+No template found for BridesmaidsController#create, rendering head :no_content
+Completed 204 No Content in 150ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/brides/45/bridesmaids" for 127.0.0.1 at 2018-06-20 13:32:08 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Rz69P1F+4foMCcHEq6/BzziXXAVzD56h74WfuCyWajHiTtVU8DAt7avcHaXfe/0ekiIi5FilWKFCgJLd3Eqpw==", "bridesmaid"=>{"name"=>"Lauren", "bride_id"=>"45"}, "dress"=>{"id"=>"1"}, "commit"=>"Create Bridesmaid", "bride_id"=>"45"}
+No template found for BridesmaidsController#create, rendering head :no_content
+Completed 204 No Content in 118ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/brides/45/bridesmaids" for 127.0.0.1 at 2018-06-20 13:32:44 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Rz69P1F+4foMCcHEq6/BzziXXAVzD56h74WfuCyWajHiTtVU8DAt7avcHaXfe/0ekiIi5FilWKFCgJLd3Eqpw==", "bridesmaid"=>{"name"=>"Lauren", "bride_id"=>"45"}, "dress"=>{"id"=>"1"}, "commit"=>"Create Bridesmaid", "bride_id"=>"45"}
+  [1m[36mDress Load (37.3ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBride Load (25.7ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  [1m[36mBridesmaid Create (28.7ms)[0m  [1m[32mINSERT INTO "bridesmaids" ("name", "bride_id", "dress_id") VALUES (?, ?, ?)[0m  [["name", "Lauren"], ["bride_id", 45], ["dress_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
