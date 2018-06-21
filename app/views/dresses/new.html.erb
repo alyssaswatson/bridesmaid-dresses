@@ -6,11 +6,5 @@ Add a Dress:
     <%= f.text_field :material, placeholder: "Enter the dress material" %><br>
     Dress Length:
     <%= f.text_field :length, placeholder: "Enter the dress length" %><br>
-    Bridesmaid: 
-        <%= f.fields_for :bridesmaids do |bridesmaid| %>
-            Name:
-            <%= bridesmaid.text_field :name, placeholder: "Enter bridesmaids name" %><br>
-            <%= bridesmaid.hidden_field :bride_id, value: @bride.id %>
-        <% end %>
     <%= f.submit %>
 <% end %>

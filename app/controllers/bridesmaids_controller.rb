@@ -17,6 +17,12 @@ class BridesmaidsController < ApplicationController
         end
     end
 
+    def index
+        @bride = Bride.find(params[:bride_id])
+        @bridesmaids = @bride.bridesmaids
+        #byebug
+    end
+
     
     private
     

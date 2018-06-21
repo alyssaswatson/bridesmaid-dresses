@@ -20,7 +20,6 @@ class BridesController < ApplicationController
     @bride.grooms_name = params[:bride][:grooms_name]
     if @bride.save
       #byebug
-      current_user
       redirect_to bride_path(@bride)
     else
       render :new

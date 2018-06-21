@@ -3,8 +3,11 @@
     <br>
     Groom's Name: <%= bride.grooms_name %>
     <br>
-    <%  bride.bridesmaids.each_with_index do |bridesmaid| %>
+    <%  bride.bridesmaids.each do |bridesmaid| %>
         - <%= bridesmaid.name %>
+        <br>
+        -- < img src= <%=bridesmaid.dress.link%> alt="bridesmaid dress" height="42" width="42" >
+        <br>
         <br>
     <% end %>
     <br>
