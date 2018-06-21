@@ -1,10 +1,9 @@
 <html>
-<% @bridesmaids.each do |bridesmaid| %>
-    <img src="<%=bridesmaid.dress.link%>" alt="bridesmaid dress" height="250" >
+<% @dresses.each do |dress| %>
+    <img src="<%=dress.link%>" alt="dress" height="250" >
     <br>
-    Name: <%= bridesmaid.name %><br>
-    Dress Material: <%= bridesmaid.dress.material %><br>
-    Length: <%= bridesmaid.dress.length %>
+    Dress Material: <%= dress.material %><br>
+    Length: <%= dress.length %> inches
     <br>
     <br>
 <% end %>

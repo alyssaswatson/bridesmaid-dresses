@@ -3,8 +3,9 @@
 <%= @bride.grooms_name %>
 <br>
 <% @bridesmaids.each do |bridesmaid| %>
-    <%= bridesmaid.name %>
+    - <%= bridesmaid.name %>
+    <br>
+    -- <img src="<%=bridesmaid.dress.link%>" alt="bridesmaid dress" height="250" >
+    <br>
+    <br>
 <% end %>
-<br> 
-<%= link_to 'New Dress', new_dress_path(@dress) %><br>
-<%= link_to 'New Bridesmaids', new_bride_bridesmaid_path(@bride) %>
