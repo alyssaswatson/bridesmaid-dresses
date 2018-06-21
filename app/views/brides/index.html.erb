@@ -1,2 +1,11 @@
-Hello World
-this will be an index of Brides?
+<% @brides.each do |bride| %>
+    Bride Name: <%= bride.name %>
+    <br>
+    Groom's Name: <%= bride.grooms_name %>
+    <br>
+    <%  bride.bridesmaids.each_with_index do |bridesmaid| %>
+        - <%= bridesmaid.name %>
+        <br>
+    <% end %>
+    <br>
+<% end %>

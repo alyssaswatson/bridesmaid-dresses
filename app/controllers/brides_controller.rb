@@ -21,7 +21,6 @@ class BridesController < ApplicationController
     if @bride.save
       #byebug
       current_user
-      byebug
       redirect_to bride_path(@bride)
     else
       render :new

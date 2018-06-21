@@ -8,7 +8,13 @@ class BridesmaidsController < ApplicationController
 
     def create
         @bridesmaid = Bridesmaid.new(bridesmaid_params)
-        byebug
+        @bridesmaid.dress = Dress.find(params[:dress][:id])
+        @bride = Bride.find(params[:bride_id ])
+        if @bridesmaid.save
+            redirect_to bride_bridesmaids_path(@bride)
+        else 
+            render :new
+        end
     end
 
     
