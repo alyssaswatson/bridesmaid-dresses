@@ -1,0 +1,20 @@
+<% if @bride.errors.any? %>
+<div id="error_explanation">
+  <h2>There were some errors:</h2>
+  <ul>
+    <% @bride.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= form_for(@bride) do |f| %>
+    Name:
+    <%= f.text_field :name, placeholder: "Enter your name" %><br>
+    Password:
+    <%= f.text_field :password, placeholder: "Enter a password" %><br>
+    Groom's Name:
+    <%= f.text_field :grooms_name, placeholder: "Enter the groom's name" %><br>
+    <%= f.submit %>
+<% end %>

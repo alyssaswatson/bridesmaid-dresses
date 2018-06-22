@@ -1,0 +1,9 @@
+<%= form_for(@dress) do |f| %>
+    Link:
+    <%= f.text_field :link, placeholder: "Enter dress link" %><br>
+    Dress Material:
+    <%= f.text_field :material, placeholder: "Enter the dress material" %><br>
+    Dress Length:
+    <%= f.text_field :length, placeholder: "Enter the dress length" %><br>
+    <%= f.submit %>
+<% end %>
