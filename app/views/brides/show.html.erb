@@ -1,11 +1,5 @@
 <strong>Name:</strong> <%= @bride.name %>
 <br>
-<%= @bride.grooms_name %>
+Groom's Name: <%= @bride.grooms_name %>
 <br>
-<% @bridesmaids.each do |bridesmaid| %>
-    - <%= bridesmaid.name %>
-    <br>
-    -- <img src="<%=bridesmaid.dress.link%>" alt="bridesmaid dress" height="250" >
-    <br>
-    <br>
-<% end %>
+<%= render partial: "bridesmaids/bridesmaid_dresses" %> </br>
