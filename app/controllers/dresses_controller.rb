@@ -9,10 +9,7 @@ class DressesController < ApplicationController
     end
 
     def create
-        @dress = Dress.new
-        @dress.link = params[:dress][:link]
-        @dress.material = params[:dress][:material]
-        @dress.length = params[:dress][:length]
+        @dress = Dress.new(dress_params)
         if @dress.save
             redirect_to dress_path(@dress)
           else
@@ -24,6 +21,18 @@ class DressesController < ApplicationController
         @dress = Dress.find(params[:id])
     end
 
+    def update
+        if @dress.update(dress_params)
+            redirect_to dress_path(@dress)
+        else
+            render :edit
+        end
+    end
 
+    private
+    
+        def dress_params
+          params.require(:dress).permit(:link, :material, :length)
+        end
 
 end

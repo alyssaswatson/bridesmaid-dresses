@@ -14,10 +14,7 @@ class BridesController < ApplicationController
   end
 
   def create
-    @bride = Bride.new
-    @bride.name = params[:bride][:name]
-    @bride.password = params[:bride][:password]
-    @bride.grooms_name = params[:bride][:grooms_name]
+    @bride = Bride.new(bride_params)
     if @bride.save
       #byebug
       redirect_to bride_path(@bride)
@@ -26,6 +23,25 @@ class BridesController < ApplicationController
     end
   end
 
-  
+  def edit
+    @bride = Bride.find(params[:id])
+  end
+
+  def update
+    @bride = Bride.find(params[:id])
+    if @bride.update(bride_params)
+      redirect_to bride_path(@bride)
+    else
+      render :edit
+    end
+    
+  end
+
+private
+
+    def bride_params
+      params.require(:bride).permit(:name, :password, :grooms_name)
+    end
+
 
 end
