@@ -1,12 +1,7 @@
 Dresses
 <br>
 <html>
-<% @dresses.each do |dress| %>
-    <img src="<%=dress.link%>" alt="dress" height="250" >
-    <br>
-    Dress Material: <%= dress.material %><br>
-    Length: <%= dress.length %> inches
-    <br>
-    <br>
+<% @dresses.each do |@dress| %>
+    <%= render partial: "dresses" %>
 <% end %>
 </html>
