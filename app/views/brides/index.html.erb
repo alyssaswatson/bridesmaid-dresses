@@ -1,9 +1,10 @@
 <% @brides.each do |bride| %>
-    Bride Name: <%= bride.name %>
+    Bride Name: <%= link_to 'Bride sub', bride_path(bride) %>
     <br>
     Groom's Name: <%= bride.grooms_name %>
     <br>
     <% @bridesmaids = bride.bridesmaids %>
     <%= render partial: "bridesmaids/bridesmaid_dresses" %> </br>
     <br>
+
 <% end %>

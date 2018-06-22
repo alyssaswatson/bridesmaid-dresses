@@ -2,4 +2,5 @@
 <%= @bride.name %>
 <br><br>
 <%= render partial: "bridesmaid_dresses" %>
+<%= link_to 'New Bridesmaid', new_bride_bridesmaid_path(:bride_id => @bride.id) %>
 </html>

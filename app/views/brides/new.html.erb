@@ -1,4 +1,16 @@
 Welcome! Please create a profile so you can start organizing dress options!
+
+<% if @bride.errors.any? %>
+<div id="error_explanation">
+  <h2>There were some errors:</h2>
+  <ul>
+    <% @bride.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 <%= form_for(@bride) do |f| %>
     Name:
     <%= f.text_field :name, placeholder: "Enter your name" %><br>
