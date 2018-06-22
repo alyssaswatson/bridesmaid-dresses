@@ -6,7 +6,8 @@
         <br>
         Name: <%= bridesmaid.name %><br>
         Dress Material: <%= bridesmaid.dress.material %><br>
-        Length: <%= bridesmaid.dress.length %> inches
+        Length: <%= bridesmaid.dress.length %> inches<br>
+        <%= link_to 'Edit Bridesmaid', edit_bride_bridesmaid_path(:bride_id => bridesmaid.bride.id, :id => bridesmaid.id) %>        
     <br>
     <br>
     </div>

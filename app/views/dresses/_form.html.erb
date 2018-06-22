@@ -1,3 +1,14 @@
+<% if @dress.errors.any? %>
+<div id="error_explanation">
+  <h3>There were some errors:</h3>
+  <ul>
+    <% @dress.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 <%= form_for(@dress) do |f| %>
     Link:
     <%= f.text_field :link, placeholder: "Enter dress link" %><br>

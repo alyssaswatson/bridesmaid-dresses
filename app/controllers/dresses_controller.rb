@@ -17,11 +17,16 @@ class DressesController < ApplicationController
           end
     end
 
+    def edit 
+        @dress = Dress.find(params[:id])
+    end
+
     def show
         @dress = Dress.find(params[:id])
     end
 
     def update
+        @dress = Dress.find(params[:id])
         if @dress.update(dress_params)
             redirect_to dress_path(@dress)
         else
