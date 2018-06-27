@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :current_user
   before_action :authentication_required, except: [:new, :create, :index]
+  helper_method :current_user, :logged_in?
   layout "application"
   #before_action :authentication_required, except: [:index, :create, :new]
 
@@ -16,6 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
+    #byebug
     @current_user ||= Bride.find(session[:bride_id]) if session[:bride_id]
   end
 
