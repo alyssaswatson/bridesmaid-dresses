@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   resources :dresses, only: [:new, :create, :index, :show, :edit, :update]
 
-  #root 'dresses#index'
+  root 'brides#index'
 end
