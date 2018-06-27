@@ -5,13 +5,20 @@
   </head>
   <body>
   <h1>Unique Bridesmaid Dress Creater</h1>
-    <ul>
+
+    <ul class="nav navbar-nav">
+      <% if current_user %>
+        <li><%= link_to "Hello, #{current_user.name}!", bride_path(current_user) %></li>
+        <li><%= link_to 'Add a Dress', new_dress_path %></li>
+        <li><%= link_to "Log Out", signout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'New Bride Profile', new_bride_path %></li>
+        <li><%= link_to "Sign In", signin_path %></li>
+      <% end %>
         <li><%= link_to 'View All Brides', brides_path %></li>
         <li><%= link_to 'View All Dresses', dresses_path %></li>
-        <li><%= link_to 'New Bride Profile', new_bride_path %></li>
-        <li><%= link_to 'Add a Dress', new_dress_path %></li>
     </ul>
-
+    
     <!-- content -->
     <div class="container"  role="main">
       <%= yield %>
