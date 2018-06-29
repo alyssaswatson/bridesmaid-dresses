@@ -4,7 +4,7 @@ Groom's Name: <%= @bride.grooms_name %>
 <br>
 <%= render partial: "bridesmaids/bridesmaid_dresses" %> </br>
 <br>
-<% if @bride.id == current_user.id %>
+<% if logged_in? && @bride.id == current_user.id %>
     <%= link_to 'New Bridesmaid', new_bride_bridesmaid_path(:bride_id => @bride.id) %>
     <br>
     <%= link_to 'Edit Bride Profile', edit_bride_path(@bride) %>
