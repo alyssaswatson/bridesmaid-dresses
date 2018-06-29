@@ -29,6 +29,7 @@ class BridesmaidsController < ApplicationController
         @bride = Bride.find(params[:bride_id])
         @bridesmaid = Bridesmaid.find(params[:id])
         @dress = Dress.find(@bridesmaid.dress_id)
+        @dresses = Dress.all
     end   
 
     def update
@@ -41,6 +42,17 @@ class BridesmaidsController < ApplicationController
         else 
             render :edit
         end
+    end
+
+    def show
+        @bridesmaid = Bridesmaid.find(params[:id])
+    end
+
+    def destroy
+        @bride = Bride.find(params[:bride_id])
+        @bridesmaid = Bridesmaid.find(params[:id])
+        @bridesmaid.destroy
+        redirect_to bride_path(@bride)
     end
 
     

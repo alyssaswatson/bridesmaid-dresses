@@ -8,7 +8,8 @@
         Dress Material: <%= bridesmaid.dress.material %><br>
         Length: <%= bridesmaid.dress.length %> inches<br>
         <% if logged_in? && bridesmaid.bride.id == current_user.id %>
-            <%= link_to 'Edit Bridesmaid', edit_bride_bridesmaid_path(:bride_id => bridesmaid.bride.id, :id => bridesmaid.id) %> 
+            <%= button_to 'Edit Bridesmaid', edit_bride_bridesmaid_path(:bride_id => bridesmaid.bride.id, :id => bridesmaid.id) %> <br>
+            <%= button_to "Delete Bridesmaid", bride_bridesmaid_path(:bride_id => bridesmaid.bride.id, :id => bridesmaid.id), :method  => :delete %> 
         <% end %>       
     <br>
     <br>
