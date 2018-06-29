@@ -5,12 +5,12 @@ class BridesmaidsController < ApplicationController
     def new
         @bride = Bride.find(params[:bride_id])
         @bridesmaid = @bride.bridesmaids.build
-        @dress = Dress.new
+        @dresses = Dress.all
     end
 
     def create
         @bridesmaid = Bridesmaid.new(bridesmaid_params)
-        @bridesmaid.dress = Dress.find(params[:dress][:id])
+        @bridesmaid.dress = Dress.find(params[:bridesmaid][:dress_id])
         @bride = Bride.find(params[:bride_id ])
         if @bridesmaid.save
             redirect_to bride_bridesmaids_path(@bride)

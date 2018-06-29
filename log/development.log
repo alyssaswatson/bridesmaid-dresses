@@ -14509,3 +14509,600 @@ Processing by BridesController#index as HTML
 Completed 200 OK in 138ms (Views: 81.5ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/brides/5" for 127.0.0.1 at 2018-06-28 22:32:59 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/Alyssa/.rvm/gems/ruby-2.3.1/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (28.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBride Load (57.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering brides/show.html.erb within layouts/application
+  [1m[36mBridesmaid Load (16.4ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 5]]
+  [1m[36mDress Load (1.5ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (122.3ms)
+  Rendered brides/show.html.erb within layouts/application (180.5ms)
+Completed 200 OK in 887ms (Views: 315.7ms | ActiveRecord: 78.5ms)
+
+
+Started GET "/brides/5/bridesmaids/new" for 127.0.0.1 at 2018-06-28 22:40:53 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"5"}
+  [1m[36mBride Load (25.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (18.7ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (351.3ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (382.6ms)
+Completed 200 OK in 546ms (Views: 425.2ms | ActiveRecord: 44.0ms)
+
+
+Started GET "/brides/5/bridesmaids/new" for 127.0.0.1 at 2018-06-28 22:47:52 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"5"}
+  [1m[36mBride Load (15.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (13.1ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (330.0ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (361.4ms)
+Completed 200 OK in 563ms (Views: 384.1ms | ActiveRecord: 30.8ms)
+
+
+Started GET "/brides/5/bridesmaids/new" for 127.0.0.1 at 2018-06-28 22:49:32 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"5"}
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (0.3ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (5.9ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 62ms (Views: 33.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/brides/5/bridesmaids/new" for 127.0.0.1 at 2018-06-28 22:51:15 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"5"}
+  [1m[36mBride Load (0.6ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (0.3ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (12.2ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 79ms (Views: 41.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/brides/5/bridesmaids/new" for 127.0.0.1 at 2018-06-28 22:51:37 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"5"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (0.3ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (4.9ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 71ms (Views: 51.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/brides/5/bridesmaids/new" for 127.0.0.1 at 2018-06-28 22:51:48 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"5"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (0.3ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (5.1ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/brides/5/bridesmaids" for 127.0.0.1 at 2018-06-28 22:51:57 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ABs37QV/zNLk2ygFnBY55mvg9JumGF2lH/KMcOUqRBZgKbI0PyyV1y8uW+Z0r2LhFcxN9bXnB54hpSJEDmSJw==", "bridesmaid"=>{"name"=>"Jenny", "bride_id"=>"5", "dress_id"=>"dress_id"}, "commit"=>"Create Bridesmaid", "bride_id"=>"5"}
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameter: :dress_id
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/bridesmaids_controller.rb:13:in `create'
+Started PUT "/__web_console/repl_sessions/33344263ce80db9d082bca061ae596ce" for 127.0.0.1 at 2018-06-28 22:52:54 -0400
+Started PUT "/__web_console/repl_sessions/33344263ce80db9d082bca061ae596ce" for 127.0.0.1 at 2018-06-28 22:52:54 -0400
+Started POST "/brides/5/bridesmaids" for 127.0.0.1 at 2018-06-28 22:54:32 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ABs37QV/zNLk2ygFnBY55mvg9JumGF2lH/KMcOUqRBZgKbI0PyyV1y8uW+Z0r2LhFcxN9bXnB54hpSJEDmSJw==", "bridesmaid"=>{"name"=>"Jenny", "bride_id"=>"5", "dress_id"=>"dress_id"}, "commit"=>"Create Bridesmaid", "bride_id"=>"5"}
+  [1m[36mBride Load (15.7ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameter: :dress_id
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 17.4ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/bridesmaids_controller.rb:13:in `create'
+Started PUT "/__web_console/repl_sessions/28c6737f1f9f7d6322b16ad0e472a48e" for 127.0.0.1 at 2018-06-28 22:54:47 -0400
+Started PUT "/__web_console/repl_sessions/28c6737f1f9f7d6322b16ad0e472a48e" for 127.0.0.1 at 2018-06-28 22:54:48 -0400
+Started GET "/brides/5/bridesmaids/new" for 127.0.0.1 at 2018-06-28 22:54:55 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"5"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (12.7ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (22.6ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 114ms (Views: 81.7ms | ActiveRecord: 13.6ms)
+
+
+Started POST "/brides/5/bridesmaids" for 127.0.0.1 at 2018-06-28 22:55:54 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XpkTeOweMrq5qbAWLDbaRlvr2zhSAOqA2HECPuCxRkjbGdlviPd/3q6GZdmjlD8qRhNp3epPF+g0iFyGMxx9fw==", "bridesmaid"=>{"name"=>"Jenny", "bride_id"=>"5", "dress_id"=>"dress.id"}, "commit"=>"Create Bridesmaid", "bride_id"=>"5"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameter: :dress_id
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/bridesmaids_controller.rb:13:in `create'
+Started PUT "/__web_console/repl_sessions/66ff0c12342d28f6c2509e6c83888ad8" for 127.0.0.1 at 2018-06-28 22:56:15 -0400
+Started PUT "/__web_console/repl_sessions/66ff0c12342d28f6c2509e6c83888ad8" for 127.0.0.1 at 2018-06-28 22:56:20 -0400
+Started PUT "/__web_console/repl_sessions/66ff0c12342d28f6c2509e6c83888ad8" for 127.0.0.1 at 2018-06-28 22:56:23 -0400
+Started GET "/brides/5/bridesmaids/new" for 127.0.0.1 at 2018-06-28 22:56:40 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"5"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (0.3ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (4.3ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 51ms (Views: 32.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/brides/5/bridesmaids" for 127.0.0.1 at 2018-06-28 22:56:46 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yXlqQj05aLsdzkdhFTdC06YzIYcIBeCe+bOm9PciushM+aBVWdAl3wrhkq6alae/u8uTYrBKHfYVSvhMJI+B/w==", "bridesmaid"=>{"name"=>"Jenny", "bride_id"=>"5", "dress_id"=>"3"}, "commit"=>"Create Bridesmaid", "bride_id"=>"5"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameter: :dress_id
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/bridesmaids_controller.rb:13:in `create'
+Started PUT "/__web_console/repl_sessions/369eef5371d6e5db9739691e9548e5d3" for 127.0.0.1 at 2018-06-28 22:56:51 -0400
+Started PUT "/__web_console/repl_sessions/369eef5371d6e5db9739691e9548e5d3" for 127.0.0.1 at 2018-06-28 22:56:55 -0400
+Started PUT "/__web_console/repl_sessions/369eef5371d6e5db9739691e9548e5d3" for 127.0.0.1 at 2018-06-28 22:57:21 -0400
+Started PUT "/__web_console/repl_sessions/369eef5371d6e5db9739691e9548e5d3" for 127.0.0.1 at 2018-06-28 22:58:03 -0400
+Started GET "/brides/5/bridesmaids/new" for 127.0.0.1 at 2018-06-28 22:58:44 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"5"}
+  [1m[36mBride Load (15.9ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (8.8ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (20.7ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 189ms (Views: 54.0ms | ActiveRecord: 27.6ms)
+
+
+Started POST "/brides/5/bridesmaids" for 127.0.0.1 at 2018-06-28 22:58:50 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fkwVFjSov30Lv5XKYwxTxqehjJxf3lJylCuD5pXUFvP7zN8BUEHyGRyQQAXsrraqulk+eeeRrxp40t1eRnktxA==", "bridesmaid"=>{"name"=>"Jenny", "bride_id"=>"5", "dress_id"=>"3"}, "commit"=>"Create Bridesmaid", "bride_id"=>"5"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameter: :dress_id
+  [1m[36mDress Load (0.3ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Bride Load (0.0ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBridesmaid Create (12.2ms)[0m  [1m[32mINSERT INTO "bridesmaids" ("name", "bride_id", "dress_id") VALUES (?, ?, ?)[0m  [["name", "Jenny"], ["bride_id", 5], ["dress_id", 3]]
+  [1m[35m (23.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/5/bridesmaids
+Completed 302 Found in 57ms (ActiveRecord: 36.2ms)
+
+
+Started GET "/brides/5/bridesmaids" for 127.0.0.1 at 2018-06-28 22:58:50 -0400
+Processing by BridesmaidsController#index as HTML
+  Parameters: {"bride_id"=>"5"}
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bridesmaids/index.html.erb within layouts/application
+  [1m[36mBridesmaid Load (0.3ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 5]]
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (9.9ms)
+  Rendered bridesmaids/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 53ms (Views: 32.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/brides" for 127.0.0.1 at 2018-06-28 22:59:16 -0400
+Processing by BridesController#index as HTML
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering brides/index.html.erb within layouts/application
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT "brides".* FROM "brides"[0m
+  [1m[36mBridesmaid Load (0.2ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (4.9ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 2]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (2.9ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 3]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (1.8ms)
+  [1m[36mBridesmaid Load (0.2ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 4]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (3.5ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 5]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (3.4ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 6]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (1.5ms)
+  Rendered brides/index.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 50ms (Views: 38.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2018-06-28 22:59:32 -0400
+Processing by SessionsController#destroy as HTML
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 22:59:33 -0400
+Processing by BridesController#index as HTML
+  Rendering brides/index.html.erb within layouts/application
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT "brides".* FROM "brides"[0m
+  [1m[36mBridesmaid Load (0.3ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (5.2ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 2]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (3.2ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 3]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (2.2ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 4]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (2.2ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 5]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (2.7ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 6]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (1.5ms)
+  Rendered brides/index.html.erb within layouts/application (49.6ms)
+Completed 200 OK in 82ms (Views: 70.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-06-28 22:59:35 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 135ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/create" for 127.0.0.1 at 2018-06-28 22:59:41 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CXLIKZrK18DwmeHVTh6LV3vHXa4ntkWRNFslPLdXYvyIx000JQACkR7r7IiYguRGZRm4r+9YSj6zD00D9lf9xQ==", "bride"=>{"name"=>"Alyssa", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."name" = ? LIMIT ?[0m  [["name", "Alyssa"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/brides/3
+Completed 302 Found in 78ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/brides/3" for 127.0.0.1 at 2018-06-28 22:59:41 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering brides/show.html.erb within layouts/application
+  [1m[36mBridesmaid Load (0.2ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 3]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (3.2ms)
+  Rendered brides/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 28ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dresses/new" for 127.0.0.1 at 2018-06-28 22:59:45 -0400
+Processing by DressesController#new as HTML
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering dresses/new.html.erb within layouts/application
+  Rendered dresses/_form.html.erb (3.1ms)
+  Rendered dresses/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 77ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/dresses" for 127.0.0.1 at 2018-06-28 23:01:16 -0400
+Processing by DressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y6VpAgEw006BTnKlNlg9QyUGzaSyuuccwykfhxPo1TlgJwqWOLxvnCoLJ8VdiaQyfBOwpMW7Sak9e0MBhshQng==", "dress"=>{"link"=>"https://cdn-1.azazie.com/upimg/o390/bb/75/df88e66b9678d266e13a337cb38dbb75.jpg", "material"=>"Chiffon", "length"=>"54"}, "commit"=>"Create Dress"}
+  [1m[36mBride Load (0.7ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDress Create (42.9ms)[0m  [1m[32mINSERT INTO "dresses" ("link", "material", "length") VALUES (?, ?, ?)[0m  [["link", "https://cdn-1.azazie.com/upimg/o390/bb/75/df88e66b9678d266e13a337cb38dbb75.jpg"], ["material", "Chiffon"], ["length", 54]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dresses/6
+Completed 302 Found in 80ms (ActiveRecord: 46.3ms)
+
+
+Started GET "/dresses/6" for 127.0.0.1 at 2018-06-28 23:01:16 -0400
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  Rendered dresses/_dresses.html.erb (3.3ms)
+  Rendered dresses/show.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 170ms (Views: 87.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/brides/3" for 127.0.0.1 at 2018-06-28 23:01:23 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering brides/show.html.erb within layouts/application
+  [1m[36mBridesmaid Load (0.2ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 3]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (6.8ms)
+  Rendered brides/show.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 64ms (Views: 30.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/brides/3/bridesmaids/new" for 127.0.0.1 at 2018-06-28 23:01:25 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"3"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (0.4ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (12.0ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 103ms (Views: 47.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/brides/3/bridesmaids/new" for 127.0.0.1 at 2018-06-28 23:02:10 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"3"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (6.5ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 64ms (Views: 35.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/brides/3/bridesmaids" for 127.0.0.1 at 2018-06-28 23:02:17 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePKegADxApykV57YW7O5FnEU086m7pkhXkTHJSfoxSYJ5OqfHmZ3nckRHVTQ/Kg/OkzC4mNia/OaVvgh6BU0pQ==", "bridesmaid"=>{"name"=>"", "bride_id"=>"3", "dress_id"=>"6"}, "commit"=>"Create Bridesmaid", "bride_id"=>"3"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :dress_id
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Bride Load (0.0ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/_form.html.erb (12.0ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (18.8ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:     <%= f.hidden_field :bride_id, value: @bride.id %>
+    16:     <%= f.label :dress_id, 'Pick a Dress:' %>
+    17:     <br>
+    18:     <% @dresses.each do |dress| %>
+    19:         <%= f.radio_button :dress_id, dress.id %> <img src="<%=dress.link%>" alt="dress" height="250" >
+    20:         <br>
+    21:     <% end %>
+  
+app/views/bridesmaids/_form.html.erb:18:in `block in _app_views_bridesmaids__form_html_erb__4315835865585234233_70156918778440'
+app/views/bridesmaids/_form.html.erb:12:in `_app_views_bridesmaids__form_html_erb__4315835865585234233_70156918778440'
+app/views/bridesmaids/new.html.erb:2:in `_app_views_bridesmaids_new_html_erb___2472968363712726295_70156934258960'
+app/controllers/bridesmaids_controller.rb:18:in `create'
+Started POST "/brides/3/bridesmaids" for 127.0.0.1 at 2018-06-28 23:02:32 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePKegADxApykV57YW7O5FnEU086m7pkhXkTHJSfoxSYJ5OqfHmZ3nckRHVTQ/Kg/OkzC4mNia/OaVvgh6BU0pQ==", "bridesmaid"=>{"name"=>"", "bride_id"=>"3", "dress_id"=>"6"}, "commit"=>"Create Bridesmaid", "bride_id"=>"3"}
+  [1m[36mBride Load (37.6ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :dress_id
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Bride Load (0.0ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/_form.html.erb (5.8ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (31.4ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 38.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:     <%= f.hidden_field :bride_id, value: @bride.id %>
+    16:     <%= f.label :dress_id, 'Pick a Dress:' %>
+    17:     <br>
+    18:     <% @dresses.each do |dress| %>
+    19:         <%= f.radio_button :dress_id, dress.id %> <img src="<%=dress.link%>" alt="dress" height="250" >
+    20:         <br>
+    21:     <% end %>
+  
+app/views/bridesmaids/_form.html.erb:18:in `block in _app_views_bridesmaids__form_html_erb__4315835865585234233_70156951417420'
+app/views/bridesmaids/_form.html.erb:12:in `_app_views_bridesmaids__form_html_erb__4315835865585234233_70156951417420'
+app/views/bridesmaids/new.html.erb:2:in `_app_views_bridesmaids_new_html_erb___2472968363712726295_70156949191740'
+app/controllers/bridesmaids_controller.rb:18:in `create'
+Started PUT "/__web_console/repl_sessions/47e2b16da13a7caaccf574ccfe318032" for 127.0.0.1 at 2018-06-28 23:03:26 -0400
+Started PUT "/__web_console/repl_sessions/47e2b16da13a7caaccf574ccfe318032" for 127.0.0.1 at 2018-06-28 23:03:27 -0400
+Started PUT "/__web_console/repl_sessions/47e2b16da13a7caaccf574ccfe318032" for 127.0.0.1 at 2018-06-28 23:04:22 -0400
+Started PUT "/__web_console/repl_sessions/47e2b16da13a7caaccf574ccfe318032" for 127.0.0.1 at 2018-06-28 23:05:02 -0400
+Started PUT "/__web_console/repl_sessions/47e2b16da13a7caaccf574ccfe318032" for 127.0.0.1 at 2018-06-28 23:05:23 -0400
+Started POST "/brides/3/bridesmaids" for 127.0.0.1 at 2018-06-28 23:05:57 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePKegADxApykV57YW7O5FnEU086m7pkhXkTHJSfoxSYJ5OqfHmZ3nckRHVTQ/Kg/OkzC4mNia/OaVvgh6BU0pQ==", "bridesmaid"=>{"name"=>"Mary L.", "bride_id"=>"3", "dress_id"=>"6"}, "commit"=>"Create Bridesmaid", "bride_id"=>"3"}
+  [1m[36mBride Load (0.8ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :dress_id
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Bride Load (0.0ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBridesmaid Create (0.5ms)[0m  [1m[32mINSERT INTO "bridesmaids" ("name", "bride_id", "dress_id") VALUES (?, ?, ?)[0m  [["name", "Mary L."], ["bride_id", 3], ["dress_id", 6]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brides/3/bridesmaids
+Completed 302 Found in 28ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/brides/3/bridesmaids" for 127.0.0.1 at 2018-06-28 23:05:57 -0400
+Processing by BridesmaidsController#index as HTML
+  Parameters: {"bride_id"=>"3"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bridesmaids/index.html.erb within layouts/application
+  [1m[36mBridesmaid Load (0.2ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 3]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (6.5ms)
+  Rendered bridesmaids/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 80ms (Views: 50.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/brides/3" for 127.0.0.1 at 2018-06-28 23:06:00 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering brides/show.html.erb within layouts/application
+  [1m[36mBridesmaid Load (0.2ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 3]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (4.4ms)
+  Rendered brides/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 44ms (Views: 13.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/brides/3/bridesmaids/new" for 127.0.0.1 at 2018-06-28 23:06:13 -0400
+Processing by BridesmaidsController#new as HTML
+  Parameters: {"bride_id"=>"3"}
+  [1m[36mBride Load (13.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bridesmaids/new.html.erb within layouts/application
+  [1m[36mDress Load (0.3ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered bridesmaids/_form.html.erb (9.3ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 89ms (Views: 59.5ms | ActiveRecord: 13.7ms)
+
+
+Started POST "/brides/3/bridesmaids" for 127.0.0.1 at 2018-06-28 23:06:21 -0400
+Processing by BridesmaidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ESAWDkFFJSIULRDfmaKV0C9zkROzFGxHv1pjPvHHEulgNmIRX9JQI3lrk1MS7YT5ZCuAP3aYnpV7SFw6Pjrjag==", "bridesmaid"=>{"name"=>"", "bride_id"=>"3", "dress_id"=>"5"}, "commit"=>"Create Bridesmaid", "bride_id"=>"3"}
+  [1m[36mBride Load (0.3ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :dress_id
+  [1m[36mDress Load (0.5ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Bride Load (0.0ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering bridesmaids/new.html.erb within layouts/application
+  Rendered bridesmaids/_form.html.erb (8.5ms)
+  Rendered bridesmaids/new.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:     <%= f.hidden_field :bride_id, value: @bride.id %>
+    16:     <%= f.label :dress_id, 'Pick a Dress:' %>
+    17:     <br>
+    18:     <% @dresses.each do |dress| %>
+    19:         <%= f.radio_button :dress_id, dress.id %> <img src="<%=dress.link%>" alt="dress" height="250" >
+    20:         <br>
+    21:     <% end %>
+  
+app/views/bridesmaids/_form.html.erb:18:in `block in _app_views_bridesmaids__form_html_erb__4315835865585234233_70156931878000'
+app/views/bridesmaids/_form.html.erb:12:in `_app_views_bridesmaids__form_html_erb__4315835865585234233_70156931878000'
+app/views/bridesmaids/new.html.erb:2:in `_app_views_bridesmaids_new_html_erb___2472968363712726295_70156931947620'
+app/controllers/bridesmaids_controller.rb:18:in `create'
+Started GET "/brides/3" for 127.0.0.1 at 2018-06-28 23:06:53 -0400
+Processing by BridesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBride Load (14.6ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering brides/show.html.erb within layouts/application
+  [1m[36mBridesmaid Load (0.4ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 3]]
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (5.7ms)
+  Rendered brides/show.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 63ms (Views: 28.7ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/brides" for 127.0.0.1 at 2018-06-28 23:06:56 -0400
+Processing by BridesController#index as HTML
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT  "brides".* FROM "brides" WHERE "brides"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering brides/index.html.erb within layouts/application
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT "brides".* FROM "brides"[0m
+  [1m[36mBridesmaid Load (0.2ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (5.3ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 2]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (3.4ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 3]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (2.6ms)
+  [1m[36mBridesmaid Load (0.2ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 4]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (2.9ms)
+  [1m[36mBridesmaid Load (0.2ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 5]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (3.4ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 6]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (1.5ms)
+  Rendered brides/index.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 61ms (Views: 33.9ms | ActiveRecord: 2.2ms)
+
+
