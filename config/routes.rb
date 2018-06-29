@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   post "/sessions/create", to: "sessions#create"
   get "/auth/facebook/callback", to: "sessions#facebook_create"
   get "/signout", to: "sessions#destroy"
-  delete 'bridesmaid/:id/edit/', to: 'bridesmaid#destroy'
   resources :brides, only: [:new, :create, :index, :show, :edit, :update] do
-    # nested resource for posts
+    # nested resource
     resources :bridesmaids, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   end
 
