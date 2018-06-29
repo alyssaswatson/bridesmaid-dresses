@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_04_232829) do
+ActiveRecord::Schema.define(version: 2018_06_29_144108) do
 
   create_table "brides", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
     t.datetime "wedding_date"
     t.string "grooms_name"
+    t.string "uid"
   end
 
   create_table "bridesmaids", force: :cascade do |t|
