@@ -10,12 +10,12 @@
 
 <%= form_for @bride, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
     
-    <%= f.label :name, "Input your name" %><br>
+    <%= f.label :name, "Input your name:" %>
     <%= f.text_field :name %>
-
-    <%= f.label :password, "Enter your password" %><br>
+    <br><br>
+    <%= f.label :password, "Enter your password:" %>
     <%= f.password_field :password %>
-  
+    <br>
     <%= f.submit "Sign In"%>
      
     <% end %>

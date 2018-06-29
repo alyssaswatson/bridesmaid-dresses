@@ -18,7 +18,7 @@ class BridesController < ApplicationController
 
   def create
     @bride = Bride.new(bride_params)
-    if @bride.save
+    if @bride.save 
       session[:bride_id] = @bride.id
       redirect_to bride_path(@bride)
     else

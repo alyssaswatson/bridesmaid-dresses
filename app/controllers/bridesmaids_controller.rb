@@ -35,7 +35,7 @@ class BridesmaidsController < ApplicationController
     def update
         @bridesmaid = Bridesmaid.find(params[:id])
         @bridesmaid.name = bridesmaid_params[:name]
-        @bridesmaid.dress = Dress.find(params[:bridesmaid][:dress_id])
+        @bridesmaid.dress = Dress.find(params[:bridesmaid][:dress_id])u
         @bride = Bride.find(params[:bride_id])
         if @bridesmaid.save
             redirect_to bride_bridesmaids_path(@bride)
