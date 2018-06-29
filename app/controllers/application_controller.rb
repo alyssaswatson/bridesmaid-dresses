@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :current_user
-  before_action :authentication_required, except: [:new, :create, :index]
+  before_action :authentication_required, except: [:new, :create, :index, :show]
   helper_method :current_user, :logged_in?
   layout "application"
   #before_action :authentication_required, except: [:index, :create, :new]

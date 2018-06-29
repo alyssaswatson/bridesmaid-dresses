@@ -4,6 +4,8 @@ Groom's Name: <%= @bride.grooms_name %>
 <br>
 <%= render partial: "bridesmaids/bridesmaid_dresses" %> </br>
 <br>
-<%= link_to 'New Bridesmaid', new_bride_bridesmaid_path(:bride_id => @bride.id) %>
-<br>
-<%= link_to 'Edit Bride Profile', edit_bride_path(@bride) %>
+<% if @bride.id == current_user.id %>
+    <%= link_to 'New Bridesmaid', new_bride_bridesmaid_path(:bride_id => @bride.id) %>
+    <br>
+    <%= link_to 'Edit Bride Profile', edit_bride_path(@bride) %>
+<% end %>
