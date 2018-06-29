@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def authentication_required
     if !logged_in?
-      redirect_to root_path
+      redirect_to_root
     end
   end
 
@@ -19,6 +19,17 @@ class ApplicationController < ActionController::Base
   def current_user
     #byebug
     @current_user ||= Bride.find(session[:bride_id]) if session[:bride_id]
+  end
+
+  private
+
+  def redirect_to_root
+    redirect_to root_path
+  end
+
+  def bride_self?
+    #byebug
+    current_user.id == params[:id].to_i
   end
 
 end

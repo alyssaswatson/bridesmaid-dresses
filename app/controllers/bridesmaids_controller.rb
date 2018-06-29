@@ -1,5 +1,7 @@
 class BridesmaidsController < ApplicationController
 
+    before_action :redirect_to_root, :unless => :bride_bridesmaid_self?, :except => [:index]
+
     def new
         @bride = Bride.find(params[:bride_id])
         @bridesmaid = @bride.bridesmaids.build
@@ -45,7 +47,12 @@ class BridesmaidsController < ApplicationController
     private
     
         def bridesmaid_params
-          params.require(:bridesmaid).permit(:name, :bride_id, :id)
+            params.require(:bridesmaid).permit(:name, :bride_id, :id)
+        end
+
+        def bride_bridesmaid_self?
+            #byebug
+            current_user.id == params[:bride_id].to_i
         end
 
 end
