@@ -27,9 +27,4 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
-  def bride_self?
-    #byebug
-    current_user.id == params[:id].to_i
-  end
-
 end

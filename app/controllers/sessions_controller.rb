@@ -19,5 +19,21 @@ class SessionsController < ApplicationController
           redirect_to signin_path
         end
       end
+
+      def facebook_create
+        @bride= Bride.find_or_create_by(uid: auth['uid']) do |b|
+          b.name = auth['info']['name']
+        end
+     
+        session[:bride_id] = @bride.id
+     
+        redirect_to bride_path(@bride)
+      end
+     
+      private
+     
+      def auth
+        request.env['omniauth.auth']
+      end
     
     end
