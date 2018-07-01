@@ -34,6 +34,10 @@ class DressesController < ApplicationController
         end
     end
 
+    def longest
+        @dress = Dress.longest_dress.first
+    end
+
     private
     
         def dress_params

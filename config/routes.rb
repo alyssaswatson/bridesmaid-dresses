@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post "/sessions/create", to: "sessions#create"
   get "/auth/facebook/callback", to: "sessions#create"
   get "/signout", to: "sessions#destroy"
+  get "/dresses/longest", to: "dresses#longest"
+
   resources :brides, only: [:new, :create, :index, :show, :edit, :update] do
     # nested resource
     resources :bridesmaids, only: [:new, :create, :index, :show, :edit, :update, :destroy]
