@@ -1,6 +1,7 @@
 class BridesController < ApplicationController
 
   before_action :redirect_to_root, :unless => :bride_self?, :only => [:edit, :update]
+  before_action :set_brides
 
   def show
     @bride = Bride.find(params[:id])

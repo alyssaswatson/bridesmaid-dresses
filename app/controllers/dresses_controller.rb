@@ -1,7 +1,10 @@
 class DressesController < ApplicationController
 
+    before_action :set_dresses
+
     def index
         @dresses = Dress.all
+        render json: @dresses
     end
 
     def new
@@ -10,11 +13,7 @@ class DressesController < ApplicationController
 
     def create
         @dress = Dress.new(dress_params)
-        if @dress.save
-            redirect_to dress_path(@dress)
-          else
-            render :new
-          end
+        render json: @dress, status: 201
     end
 
     def edit 
@@ -22,16 +21,12 @@ class DressesController < ApplicationController
     end
 
     def show
-        @dress = Dress.find(params[:id])
+        render json: @dress
     end
 
     def update
-        @dress = Dress.find(params[:id])
-        if @dress.update(dress_params)
-            redirect_to dress_path(@dress)
-        else
-            render :edit
-        end
+        @dress = Dress.update(dress_params)
+        render json: @dress
     end
 
     def longest
@@ -39,9 +34,13 @@ class DressesController < ApplicationController
     end
 
     private
+
+    def set_dresses
+      @dress = Dress.find(params[:id])
+    end
     
-        def dress_params
-          params.require(:dress).permit(:link, :material, :length)
-        end
+    def dress_params
+      params.require(:dress).permit(:link, :material, :length)
+    end
 
 end
