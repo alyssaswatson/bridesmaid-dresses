@@ -1,6 +1,10 @@
 Dresses
 <br>
 <html>
+<head>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
 <% @dresses.each do |dress| %>
     <br>
     <img src="<%=dress.link%>" alt="dress" height="250" >
