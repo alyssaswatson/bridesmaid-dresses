@@ -22419,3 +22419,125 @@ Processing by DressesController#index as HTML
 Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 21:25:12 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /Users/alyssalee/.rbenv/versions/2.5.3/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.26ms)
+Completed 200 OK in 30ms (Views: 19.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 21:35:19 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.6ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.26ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 21:35:22 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (4.68ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 21:36:57 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.09ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 21:36:59 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (4.97ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 22:54:03 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (2.52ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 22:54:12 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (2.66ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 22:54:22 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /Users/alyssalee/.rbenv/versions/2.5.3/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.35ms)
+Completed 200 OK in 30ms (Views: 18.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 22:56:18 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.62ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 22:56:19 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.9ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (7.56ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 22:56:32 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /Users/alyssalee/.rbenv/versions/2.5.3/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.3ms)
+Completed 200 OK in 29ms (Views: 18.0ms | ActiveRecord: 0.6ms)
+
+
