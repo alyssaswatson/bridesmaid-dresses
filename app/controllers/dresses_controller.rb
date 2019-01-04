@@ -1,9 +1,13 @@
+require "byebug"
+
 class DressesController < ApplicationController
 
-    before_action :set_dresses
+    before_action :set_dresses, only: [:show, :edit, :update]
+      
 
     def index
         @dresses = Dress.all
+        #byebug
         render json: @dresses
     end
 
@@ -36,6 +40,7 @@ class DressesController < ApplicationController
     private
 
     def set_dresses
+       # byebug
       @dress = Dress.find(params[:id])
     end
     

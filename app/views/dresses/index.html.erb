@@ -2,6 +2,14 @@ Dresses
 <br>
 <html>
 
+<button id="loadDresses" data-url="<%=dresses_path(dresses)%>">Load Dresses</button><br />
+<div></div>
+<div id="dresses"></div>
+<% if @dressess.empty? %>
+	<p>There are no dresses./p>
+<% end %>
+<%= link_to 'Add Dress', new_dress_path(dress) %>
+
 <% @dresses.each do |dress| %>
     <br>
     <img src="<%=dress.link%>" alt="dress" height="250" >
@@ -12,6 +20,3 @@ Dresses
     <br>
     <%= link_to 'Edit Dress', edit_dress_path(dress) %>
 <% end %>
-</html>
-
-<div id="dresses"></div>
