@@ -18,13 +18,11 @@ $(document).ready(function () {
 });
 
 
-class Dress {
-    constructor(dressJson) {
-        this.id = dressJson.id;
-        this.link = dressJson.link;
-        this.material = dressJson.material;
-        this.length = dressJson.length;
-    };
+function Dress(dress, url) {
+        this.id = dress.id;
+        this.link = dress.link;
+        this.material = dress.material;
+        this.length = dress.length;
 };
 
 function getDresses() {

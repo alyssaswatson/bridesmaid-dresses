@@ -21950,3 +21950,265 @@ Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
 NoMethodError (undefined method `state' for #<Dress:0x00007ff027019978>):
   
 app/controllers/dresses_controller.rb:11:in `index'
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:33:55 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /Users/alyssalee/.rbenv/versions/2.5.3/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.7ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `state' for #<Dress:0x00007f8aa229db80>):
+  
+app/controllers/dresses_controller.rb:11:in `index'
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:39:54 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.54ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `state' for #<Dress:0x00007f8aa2331448>):
+  
+app/controllers/dresses_controller.rb:11:in `index'
+Started GET "/brides" for 127.0.0.1 at 2019-01-03 20:44:24 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /Users/alyssalee/.rbenv/versions/2.5.3/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BridesController#index as HTML
+  Rendering brides/index.html.erb within layouts/application
+  [1m[36mBride Load (0.1ms)[0m  [1m[34mSELECT "brides".* FROM "brides"[0m
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (14.6ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 2]]
+  [1m[36mDress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mDress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (1.3ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 3]]
+  [1m[36mDress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (0.9ms)
+  [1m[36mBridesmaid Load (0.0ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 4]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (0.9ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 5]]
+  [1m[36mDress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (1.2ms)
+  [1m[36mBridesmaid Load (0.0ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 6]]
+  [1m[36mDress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (0.6ms)
+  [1m[36mBridesmaid Load (0.0ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 7]]
+  [1m[36mDress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (0.6ms)
+  Rendered brides/index.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 218ms (Views: 207.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/brides" for 127.0.0.1 at 2019-01-03 20:44:27 -0500
+Processing by BridesController#index as HTML
+  Rendering brides/index.html.erb within layouts/application
+  [1m[36mBride Load (0.2ms)[0m  [1m[34mSELECT "brides".* FROM "brides"[0m
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (4.3ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 2]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (3.3ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 3]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (2.2ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 4]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (1.7ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 5]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (2.6ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 6]]
+  [1m[36mCACHE Dress Load (0.0ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (1.6ms)
+  [1m[36mBridesmaid Load (0.1ms)[0m  [1m[34mSELECT "bridesmaids".* FROM "bridesmaids" WHERE "bridesmaids"."bride_id" = ?[0m  [["bride_id", 7]]
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered bridesmaids/_bridesmaid_dresses.html.erb (1.4ms)
+  Rendered brides/index.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 65ms (Views: 60.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:44:29 -0500
+  
+ActionController::RoutingError (undefined method `state_machine' for DressesController:Class):
+  
+app/controllers/dresses_controller.rb:7:in `<class:DressesController>'
+app/controllers/dresses_controller.rb:3:in `<top (required)>'
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:44:44 -0500
+  
+SyntaxError (/Users/alyssalee/Rails Projects/bridesmaids-dresses/app/controllers/dresses_controller.rb:7: syntax error, unexpected ':', expecting ';' or '\n'
+    def state_machine :initial => :unseen do
+                      ^
+/Users/alyssalee/Rails Projects/bridesmaids-dresses/app/controllers/dresses_controller.rb:57: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/dresses_controller.rb:7: syntax error, unexpected ':', expecting ';' or '\n'
+app/controllers/dresses_controller.rb:57: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:46:20 -0500
+  
+SyntaxError (/Users/alyssalee/Rails Projects/bridesmaids-dresses/app/controllers/dresses_controller.rb:7: syntax error, unexpected ':', expecting ';' or '\n'
+    def state_machine :initial => :unseen do
+                      ^
+/Users/alyssalee/Rails Projects/bridesmaids-dresses/app/controllers/dresses_controller.rb:57: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/dresses_controller.rb:7: syntax error, unexpected ':', expecting ';' or '\n'
+app/controllers/dresses_controller.rb:57: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:46:33 -0500
+  
+ActionController::RoutingError (undefined method `state_machine' for DressesController:Class):
+  
+app/controllers/dresses_controller.rb:7:in `<class:DressesController>'
+app/controllers/dresses_controller.rb:3:in `<top (required)>'
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:46:54 -0500
+  
+LoadError (cannot load such file -- state_machine):
+  
+app/controllers/dresses_controller.rb:2:in `<top (required)>'
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:47:04 -0500
+  
+LoadError (cannot load such file -- statemachine):
+  
+app/controllers/dresses_controller.rb:2:in `<top (required)>'
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:48:05 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /Users/alyssalee/.rbenv/versions/2.5.3/bin/thin:23)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.19ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `state' for #<Dress:0x00007f9e726be5a0>):
+  
+app/controllers/dresses_controller.rb:17:in `index'
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:48:09 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.44ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `state' for #<Dress:0x00007f9e74bc3080>):
+  
+app/controllers/dresses_controller.rb:17:in `index'
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:50:17 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.02ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `state' for #<Dress:0x00007f9e71bd0a58>):
+  
+app/controllers/dresses_controller.rb:17:in `index'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-03 20:50:49 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered DressSerializer with ActiveModelSerializers::Adapter::JsonApi (5.15ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `state' for #<Dress:0x00007f9e74a49b50>):
+  
+app/controllers/dresses_controller.rb:34:in `show'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-03 20:53:42 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /Users/alyssalee/.rbenv/versions/2.5.3/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered DressSerializer with ActiveModelSerializers::Adapter::JsonApi (5.55ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `state' for #<Dress:0x00007fc48d59def0>):
+  
+app/controllers/dresses_controller.rb:27:in `show'
+Started GET "/dresses" for 127.0.0.1 at 2019-01-03 20:53:45 -0500
+Processing by DressesController#index as HTML
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.04ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `state' for #<Dress:0x00007fc4918fa7e8>):
+  
+app/controllers/dresses_controller.rb:10:in `index'

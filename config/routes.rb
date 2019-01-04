@@ -11,9 +11,6 @@ Rails.application.routes.draw do
     resources :bridesmaids, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   end
 
-  post '/dresses', to: 'dresses#create'
-  get '/dresses/:id', to: 'dresses#show'
-  patch '/dresses/:id', to: 'dresses#update'
-  get '/dresses', to: 'dresses#index'
+  resources :dresses
   
 end

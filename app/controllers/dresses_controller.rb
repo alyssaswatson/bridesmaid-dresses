@@ -4,7 +4,6 @@ class DressesController < ApplicationController
 
     before_action :set_dresses, only: [:show, :edit, :update]
       
-
     def index
         @dresses = Dress.all
         #byebug
