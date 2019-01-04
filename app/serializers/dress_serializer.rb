@@ -1,3 +1,3 @@
 class DressSerializer < ActiveModel::Serializer
-  attributes :id, :state
+  attributes :id, :link, :material, :length
 end

@@ -2,12 +2,9 @@ require "byebug"
 
 class DressesController < ApplicationController
 
-    before_action :set_dresses, only: [:show, :edit, :update]
       
     def index
-        @dresses = Dress.all
-        #byebug
-        render json: @dresses
+        render json: Dress.all
     end
 
     def new
@@ -38,10 +35,6 @@ class DressesController < ApplicationController
 
     private
 
-    def set_dresses
-       # byebug
-      @dress = Dress.find(params[:id])
-    end
     
     def dress_params
       params.require(:dress).permit(:link, :material, :length)

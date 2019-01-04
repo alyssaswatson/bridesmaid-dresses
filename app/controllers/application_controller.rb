@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :authentication_required, except: [:new, :create, :index, :show]
   helper_method :current_user, :logged_in?
   layout "application"
-  #before_action :authentication_required, except: [:index, :create, :new]
+  before_action :authentication_required, except: [:index, :create, :new]
 
   def authentication_required
     if !logged_in?
