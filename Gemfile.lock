@@ -251,7 +251,7 @@ PLATFORMS
   x86-unknown
 
 DEPENDENCIES
-  active_model_serializers (~> 0.10.0)
+  active_model_serializers
   bcrypt (~> 3.1.7)
   bootstrap-sass (= 3.3.7)
   byebug

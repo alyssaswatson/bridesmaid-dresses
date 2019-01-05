@@ -4,7 +4,9 @@ class DressesController < ApplicationController
 
       
     def index
-        render json: Dress.all
+        #byebug
+        @dresses = Dress.all
+		render json: @dresses
     end
 
     def new
