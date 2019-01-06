@@ -1,0 +1,13 @@
+<%= form_for [@dress, @dress.comments.new] do |f| %>
+    <fieldset>
+        <ol>
+            <li> 
+                <%= f.text_area :comment, rows:2, cols: 60,
+                placeholder: "Leave a comment..." %>
+            </li>
+            <li>
+                <%= f.submit 'Post Comment', class: 'button' %>
+            </li>
+        </ol>
+    </fieldset>
+<% end %>

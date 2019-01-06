@@ -12,13 +12,22 @@ class CommentsController < ApplicationController
         @dress = Dress.find(params[:dress_id])
         @comment = Comment.new
         @url = new_dress_comment_path(@dress)
+        
+        respond_to do |format|
+            format.html {redirect_to @dress}
+            format.js
+        end
+
     end
     
     def create 
         @dress = Dress.find(params[:dress_id])
         @comment = @dress.comments.new(comment_params)
         if @comment.save
-			redirect_to dress_comment_path(@comment.dress_id, @comment)
+            respond_to do |format|
+                format.html {redirect_to @dress}
+                format.js
+            end
 		else 
 			flash[:notice] = "This couldn't be saved"
 			redirect_to new_dress_comment_path(@dress)
