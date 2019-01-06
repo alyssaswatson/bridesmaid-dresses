@@ -1,7 +1,2 @@
-$('#comments').append("
-<li>
-    <p>
-        <%= @comment.comment %>
-    </p>
-</li>
-");
+$('#comments').append("<%= j render @comment %>");
+$('#comment_body').val()

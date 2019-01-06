@@ -10,20 +10,9 @@ Dress Length: <%= @dress.length %> inches
 </p>
 
 <section id="comments-section">
-    <ol id="comments">
-        <%= render @comments %>
-    </ol>
-    <%= form_for [@dress, @dress.comments.new], remote: true do |f| %>
-        <fieldset>
-            <ol>
-                <li> 
-                    <%= f.text_area :comment, rows:2, cols: 60, placeholder: "Leave a comment..." %>
-                    <%= f.hidden_field :dress_id, value: @dress.id %>
-                </li>
-                <li>
-                    <%= f.submit 'Post Comment', class: 'button' %>
-                </li>
-            </ol>
-        </fieldset>
+    <div id="comments"></div>
+    <% if @comments.empty? %>
+	<p>There are no comments. Would you like to add a comment?</p>
     <% end %>
+    <%= link_to 'Add Comment', new_dress_comment_path(@dress) %>
 </section>
