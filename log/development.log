@@ -21768,3 +21768,139 @@ Migrating to AddFieldsToComments (20190106024055)
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-05 21:48:00 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."dress_id" = ? LIMIT ?[0m  [["dress_id", 1], ["LIMIT", 11]]
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-05 21:52:25 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dresses/_dresses.html.erb (124.3ms)
+  Rendered dresses/show.html.erb within layouts/application (126.6ms)
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `dress_comments_path' for #<#<Class:0x00007fa73fc4c1b8>:0x00007fa73fc5c4f0>
+Did you mean?  dresses_longest_path):
+    13:     <ol id="comments">
+    14:         <%= render @comments %>
+    15:     </ol>
+    16:     <%= form_for [@dress, @dress.comments.new] do %>
+    17:         <fieldset>
+    18:             <ol>
+    19:                 <li> 
+  
+app/views/dresses/_dresses.html.erb:16:in `_app_views_dresses__dresses_html_erb__1506249314218181225_70178153165180'
+app/views/dresses/show.html.erb:1:in `_app_views_dresses_show_html_erb__2570110718845970484_70178153064520'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-05 21:55:23 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dresses/_dresses.html.erb (190.6ms)
+  Rendered dresses/show.html.erb within layouts/application (191.3ms)
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fa73a1be688>:0x00007fa73a1bc4a0>):
+    17:         <fieldset>
+    18:             <ol>
+    19:                 <li> 
+    20:                     <%= f.text_area :body, rows:2, cols: 60,
+    21:                     placeholder: "Leave a comment..." %>
+    22:                 </li>
+    23:                 <li>
+  
+app/views/dresses/_dresses.html.erb:20:in `block in _app_views_dresses__dresses_html_erb__1506249314218181225_70178121537200'
+app/views/dresses/_dresses.html.erb:16:in `_app_views_dresses__dresses_html_erb__1506249314218181225_70178121537200'
+app/views/dresses/show.html.erb:1:in `_app_views_dresses_show_html_erb__2570110718845970484_70178105588100'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/alyssalee/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-05 21:58:32 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dresses/_dresses.html.erb (11.2ms)
+  Rendered dresses/show.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `body' for #<Comment:0x00007fa73fe90398>):
+    17:         <fieldset>
+    18:             <ol>
+    19:                 <li> 
+    20:                     <%= f.text_area :body, rows:2, cols: 60,
+    21:                     placeholder: "Leave a comment..." %>
+    22:                 </li>
+    23:                 <li>
+  
+app/views/dresses/_dresses.html.erb:20:in `block in _app_views_dresses__dresses_html_erb__1506249314218181225_70178154240700'
+app/views/dresses/_dresses.html.erb:16:in `_app_views_dresses__dresses_html_erb__1506249314218181225_70178154240700'
+app/views/dresses/show.html.erb:1:in `_app_views_dresses_show_html_erb__2570110718845970484_70178121667460'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-05 21:59:17 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dresses/_dresses.html.erb (2.5ms)
+  Rendered dresses/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+

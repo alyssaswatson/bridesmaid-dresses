@@ -25,7 +25,7 @@ class DressesController < ApplicationController
 
     def show
         @dress = Dress.find(params[:id])
-        byebug
+        @comments = @dress.comments.all
     end
 
     def update

@@ -13,11 +13,11 @@ Dress Length: <%= @dress.length %> inches
     <ol id="comments">
         <%= render @comments %>
     </ol>
-    <%= form_for [@dress, @dress.comments.new] do %>
+    <%= form_for [@dress, @dress.comments.new] do |f| %>
         <fieldset>
             <ol>
                 <li> 
-                    <%= f.text_area :body, rows:2, cols: 60,
+                    <%= f.text_area :comment, rows:2, cols: 60,
                     placeholder: "Leave a comment..." %>
                 </li>
                 <li>
