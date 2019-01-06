@@ -21437,3 +21437,40 @@ ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It m
   
 app/views/dresses/_dresses.html.erb:14:in `_app_views_dresses__dresses_html_erb___3640010797692913219_70164935774020'
 app/views/dresses/show.html.erb:1:in `_app_views_dresses_show_html_erb__879095027601213194_70164935745020'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-05 21:19:59 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.5ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  Rendered dresses/_dresses.html.erb (2.6ms)
+  Rendered dresses/show.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    11: 
+    12: <section id="comments-section">
+    13:     <ol id="comments">
+    14:         <%= render @comments %>
+    15:     </ol>
+    16:     <%= form_for [@dress, @dress.comments.new] do %>
+    17:         <fieldset>
+  
+app/views/dresses/_dresses.html.erb:14:in `_app_views_dresses__dresses_html_erb__2731199393148304453_70281922551020'
+app/views/dresses/show.html.erb:1:in `_app_views_dresses_show_html_erb__4053319068597225874_70281926902460'
