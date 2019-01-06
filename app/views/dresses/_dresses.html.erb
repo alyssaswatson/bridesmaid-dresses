@@ -13,7 +13,7 @@ Dress Length: <%= @dress.length %> inches
     <ol id="comments">
         <%= render @comments %>
     </ol>
-    <%= form_for [@dress, @dress.comments.new] do
+    <%= form_for [@dress, @dress.comments.new] do %>
         <fieldset>
             <ol>
                 <li> 
