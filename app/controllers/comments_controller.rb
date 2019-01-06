@@ -11,14 +11,12 @@ class CommentsController < ApplicationController
     def create 
         @dress = Dress.find(params[:dress_id])
         @comment = @dress.comments.new(comment_params)
-        if @comment.save
-            byebug
-            respond_to do |format|
-              format.js
-            end
-          else
-            console.log("hallo")
-          end
+        @comment.save!
+        
+        respond_to do |format|
+            format.js
+        end
+        
     end
 
     def show
