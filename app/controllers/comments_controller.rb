@@ -14,8 +14,10 @@ class CommentsController < ApplicationController
         @comment = @dress.comments.build 
         #byebug
 		@comment.update_attributes(comment_params)
-		if @comment.save
-			redirect_to dress_comment_path(@dress.comments, @comment)
+        if @comment.save
+            respond_to do |format|
+                format.js
+            end
 		else 
 			flash[:notice] = "The comment could not be saved"
 		end
@@ -29,8 +31,8 @@ class CommentsController < ApplicationController
 
 private
 
-	def comment_params
-		params.require(:comment).permit(:dress_id)
+    def comment_params
+		params.require(:comment).permit(:dress_id, :comment)
 	end
 
 

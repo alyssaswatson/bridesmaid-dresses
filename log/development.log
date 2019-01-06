@@ -25151,3 +25151,220 @@ bundler (1.16.2) lib/bundler/friendly_errors.rb:124:in `with_friendly_errors'
 bundler (1.16.2) exe/bundle:22:in `<top (required)>'
 /usr/local/opt/ruby/bin/bundle:23:in `load'
 /usr/local/opt/ruby/bin/bundle:23:in `<main>'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 00:16:06 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [6 times] (0.4ms)
+  Rendered dresses/_dresses.html.erb (15.5ms)
+  Rendered dresses/show.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 57ms (Views: 20.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 00:16:16 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [6 times] (0.3ms)
+  Rendered dresses/_dresses.html.erb (2.9ms)
+  Rendered dresses/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 00:16:23 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>":("}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :comment
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id") VALUES (?, ?, ?)[0m  [["created_at", "2019-01-06 05:16:23.236941"], ["updated_at", "2019-01-06 05:16:23.236941"], ["dress_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/dresses/%23%3CComment::ActiveRecord_Associations_CollectionProxy:0x00007fb3921f73e8%3E/comments/7
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/dresses/%23%3CComment::ActiveRecord_Associations_CollectionProxy:0x00007fb3921f73e8%3E/comments/7" for 127.0.0.1 at 2019-01-06 00:16:23 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"dress_id"=>"#<Comment::ActiveRecord_Associations_CollectionProxy:0x00007fb3921f73e8>", "id"=>"7"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 00:19:10 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [7 times] (0.4ms)
+  Rendered dresses/_dresses.html.erb (7.6ms)
+  Rendered dresses/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 22ms (Views: 9.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 00:19:14 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>":("}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 00:25:47 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>":("}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 00:26:15 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [7 times] (0.3ms)
+  Rendered dresses/_dresses.html.erb (15.8ms)
+  Rendered dresses/show.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 47ms (Views: 21.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 00:26:16 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [7 times] (0.3ms)
+  Rendered dresses/_dresses.html.erb (2.8ms)
+  Rendered dresses/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 00:26:39 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"cute!", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 00:28:43 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [7 times] (0.2ms)
+  Rendered dresses/_dresses.html.erb (10.7ms)
+  Rendered dresses/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 36ms (Views: 14.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 00:28:56 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"love!", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 05:28:56.637601"], ["updated_at", "2019-01-06 05:28:56.637601"], ["dress_id", 1], ["comment", "love!"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/dresses/%23%3CComment::ActiveRecord_Associations_CollectionProxy:0x00007f906a886538%3E/comments/8
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/dresses/%23%3CComment::ActiveRecord_Associations_CollectionProxy:0x00007f906a886538%3E/comments/8" for 127.0.0.1 at 2019-01-06 00:28:56 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"dress_id"=>"#<Comment::ActiveRecord_Associations_CollectionProxy:0x00007f906a886538>", "id"=>"8"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 00:29:42 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [8 times] (0.3ms)
+  Rendered dresses/_dresses.html.erb (6.8ms)
+  Rendered dresses/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 20ms (Views: 9.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 00:29:47 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"love!", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 05:29:47.985875"], ["updated_at", "2019-01-06 05:29:47.985875"], ["dress_id", 1], ["comment", "love!"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"comments", :dress_id=>#<Comment id: 9, created_at: "2019-01-06 05:29:47", updated_at: "2019-01-06 05:29:47", dress_id: 1, comment: "love!">}, missing required keys: [:id]):
+  
+app/controllers/comments_controller.rb:19:in `create'

@@ -17,8 +17,8 @@ Dress Length: <%= @dress.length %> inches
         <fieldset>
             <ol>
                 <li> 
-                    <%= f.text_area :comment, rows:2, cols: 60,
-                    placeholder: "Leave a comment..." %>
+                    <%= f.text_area :comment, rows:2, cols: 60, placeholder: "Leave a comment..." %>
+                    <%= f.hidden_field :dress_id, value: @dress.id %>
                 </li>
                 <li>
                     <%= f.submit 'Post Comment', class: 'button' %>
