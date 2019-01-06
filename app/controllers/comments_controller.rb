@@ -9,17 +9,23 @@ class CommentsController < ApplicationController
     end
     
     def create
-        byebug
-        @dress = Dress.find(params[:id])
+        
+        @dress = Dress.find(params[:dress_id])
         @comment = @dress.comments.build 
+        #byebug
 		@comment.update_attributes(comment_params)
 		if @comment.save
 			redirect_to dress_comment_path(@dress.comment, @comment)
 		else 
 			flash[:notice] = "The building couldn't be saved"
-			redirect_to new_landlord_building_path(@dress)
 		end
     end
+
+private
+
+	def comment_params
+		params.require(:comment).permit(:dress_id)
+	end
 
 
 end
