@@ -25807,3 +25807,561 @@ true by adding the following to your application.rb file:
 
   Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
  (called from instance_eval at /Users/alyssalee/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.0/lib/active_support/lazy_load_hooks.rb:71)
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 01:14:48 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"whyyyyyyy", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 06:14:48.850246"], ["updated_at", "2019-01-06 06:14:48.850246"], ["dress_id", 1], ["comment", "whyyyyyyy"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 406 Not Acceptable in 49ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionController::UnknownFormat (CommentsController#create is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []):
+  
+actionpack (5.2.0) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.0) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:190:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/ssl.rb:74:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/lib/ruby/gems/2.6.0/bin/thin:23:in `load'
+/usr/local/lib/ruby/gems/2.6.0/bin/thin:23:in `<top (required)>'
+bundler (1.16.2) lib/bundler/cli/exec.rb:74:in `load'
+bundler (1.16.2) lib/bundler/cli/exec.rb:74:in `kernel_load'
+bundler (1.16.2) lib/bundler/cli/exec.rb:28:in `run'
+bundler (1.16.2) lib/bundler/cli.rb:424:in `exec'
+bundler (1.16.2) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+bundler (1.16.2) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+bundler (1.16.2) lib/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+bundler (1.16.2) lib/bundler/cli.rb:27:in `dispatch'
+bundler (1.16.2) lib/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+bundler (1.16.2) lib/bundler/cli.rb:18:in `start'
+bundler (1.16.2) exe/bundle:30:in `block in <top (required)>'
+bundler (1.16.2) lib/bundler/friendly_errors.rb:124:in `with_friendly_errors'
+bundler (1.16.2) exe/bundle:22:in `<top (required)>'
+/usr/local/opt/ruby/bin/bundle:23:in `load'
+/usr/local/opt/ruby/bin/bundle:23:in `<main>'
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 01:16:25 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"whyyyyyyy", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 06:16:25.897237"], ["updated_at", "2019-01-06 06:16:25.897237"], ["dress_id", 1], ["comment", "whyyyyyyy"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering comments/create.html.erb within layouts/application
+  Rendered comments/create.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 01:17:54 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"whyyyyyyy", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 06:17:54.290070"], ["updated_at", "2019-01-06 06:17:54.290070"], ["dress_id", 1], ["comment", "whyyyyyyy"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering comments/create.html.erb within layouts/application
+  Rendered comments/create.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 01:17:59 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"whyyyyyyy", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 06:17:59.164180"], ["updated_at", "2019-01-06 06:17:59.164180"], ["dress_id", 1], ["comment", "whyyyyyyy"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering comments/create.html.erb within layouts/application
+  Rendered comments/create.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-06 01:21:53 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb within layouts/application
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered dresses/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 25ms (Views: 11.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 01:21:59 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [24 times] (0.5ms)
+  Rendered dresses/_dresses.html.erb (17.9ms)
+  Rendered dresses/show.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 41ms (Views: 20.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 01:21:59 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [24 times] (0.4ms)
+  Rendered dresses/_dresses.html.erb (3.2ms)
+  Rendered dresses/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 01:22:06 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"how?", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 06:22:06.432314"], ["updated_at", "2019-01-06 06:22:06.432314"], ["dress_id", 1], ["comment", "how?"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering comments/create.html.erb within layouts/application
+  Rendered comments/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 01:22:46 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"how?", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 06:22:46.676343"], ["updated_at", "2019-01-06 06:22:46.676343"], ["dress_id", 1], ["comment", "how?"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 406 Not Acceptable in 32ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 11:50:04 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [26 times] (0.4ms)
+  Rendered dresses/_dresses.html.erb (7.2ms)
+  Rendered dresses/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 21ms (Views: 9.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 11:50:04 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [26 times] (0.4ms)
+  Rendered dresses/_dresses.html.erb (3.2ms)
+  Rendered dresses/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 11:50:12 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"ugh", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 16:50:12.837746"], ["updated_at", "2019-01-06 16:50:12.837746"], ["dress_id", 1], ["comment", "ugh"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 11:53:53 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"ugh", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 16:53:53.981128"], ["updated_at", "2019-01-06 16:53:53.981128"], ["dress_id", 1], ["comment", "ugh"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 406 Not Acceptable in 14ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 11:55:29 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"ugh", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 16:55:29.518757"], ["updated_at", "2019-01-06 16:55:29.518757"], ["dress_id", 1], ["comment", "ugh"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 406 Not Acceptable in 40ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started PUT "/__web_console/repl_sessions/1c3590e050639f513d20e948092ce2c5" for 127.0.0.1 at 2019-01-06 11:57:14 -0500
+Started PUT "/__web_console/repl_sessions/1c3590e050639f513d20e948092ce2c5" for 127.0.0.1 at 2019-01-06 11:57:21 -0500
+Started PUT "/__web_console/repl_sessions/1c3590e050639f513d20e948092ce2c5" for 127.0.0.1 at 2019-01-06 11:57:23 -0500
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 11:58:17 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"ugh", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 16:58:17.086588"], ["updated_at", "2019-01-06 16:58:17.086588"], ["dress_id", 1], ["comment", "ugh"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 11:59:43 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"ugh", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 16:59:43.651741"], ["updated_at", "2019-01-06 16:59:43.651741"], ["dress_id", 1], ["comment", "ugh"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 406 Not Acceptable in 37ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started PUT "/__web_console/repl_sessions/9f970449a546f1d0eac9be496b81636e" for 127.0.0.1 at 2019-01-06 11:59:47 -0500
+Started PUT "/__web_console/repl_sessions/9f970449a546f1d0eac9be496b81636e" for 127.0.0.1 at 2019-01-06 11:59:48 -0500
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 12:03:31 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"ugh", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 17:03:31.790933"], ["updated_at", "2019-01-06 17:03:31.790933"], ["dress_id", 1], ["comment", "ugh"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 406 Not Acceptable in 18ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started PUT "/__web_console/repl_sessions/5c859b004e5adf76c62fa1788002f74a" for 127.0.0.1 at 2019-01-06 12:03:39 -0500
+Started PUT "/__web_console/repl_sessions/5c859b004e5adf76c62fa1788002f74a" for 127.0.0.1 at 2019-01-06 12:03:40 -0500
+Started PUT "/__web_console/repl_sessions/5c859b004e5adf76c62fa1788002f74a" for 127.0.0.1 at 2019-01-06 12:03:42 -0500
+Started PUT "/__web_console/repl_sessions/5c859b004e5adf76c62fa1788002f74a" for 127.0.0.1 at 2019-01-06 12:03:43 -0500
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 12:04:56 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [32 times] (0.6ms)
+  Rendered dresses/_dresses.html.erb (18.3ms)
+  Rendered dresses/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 33ms (Views: 21.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 12:05:00 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [32 times] (0.7ms)
+  Rendered dresses/_dresses.html.erb (4.4ms)
+  Rendered dresses/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 12:05:09 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"so frustrated\r\n", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 17:05:09.349912"], ["updated_at", "2019-01-06 17:05:09.349912"], ["dress_id", 1], ["comment", "so frustrated\r\n"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 260952ms (ActiveRecord: 1.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/comments_controller.rb:16:in `create'
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 12:10:38 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"so frustrated\r\n", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.4ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 17:10:38.404124"], ["updated_at", "2019-01-06 17:10:38.404124"], ["dress_id", 1], ["comment", "so frustrated\r\n"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 4597ms (ActiveRecord: 3.2ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/comments_controller.rb:16:in `create'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 12:10:59 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [34 times] (1.9ms)
+  Rendered dresses/_dresses.html.erb (7.9ms)
+  Rendered dresses/show.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for nil:NilClass):
+    1: <li>
+    2:     <p>
+    3:         <%= @comment.comment %>
+    4:     </p>
+    5: </li>
+  
+app/views/comments/_comment.html.erb:3:in `_app_views_comments__comment_html_erb___2423476791582244881_70289882292060'
+app/views/dresses/_dresses.html.erb:14:in `_app_views_dresses__dresses_html_erb___1379949549906104215_70289881974700'
+app/views/dresses/show.html.erb:1:in `_app_views_dresses_show_html_erb__2050591033862732297_70289881898900'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 12:11:00 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [34 times] (2.0ms)
+  Rendered dresses/_dresses.html.erb (4.9ms)
+  Rendered dresses/show.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for nil:NilClass):
+    1: <li>
+    2:     <p>
+    3:         <%= @comment.comment %>
+    4:     </p>
+    5: </li>
+  
+app/views/comments/_comment.html.erb:3:in `_app_views_comments__comment_html_erb___2423476791582244881_70289951448460'
+app/views/dresses/_dresses.html.erb:14:in `_app_views_dresses__dresses_html_erb___1379949549906104215_70289951342060'
+app/views/dresses/show.html.erb:1:in `_app_views_dresses_show_html_erb__2050591033862732297_70289951247980'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 12:18:08 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [34 times] (1.9ms)
+  Rendered dresses/_dresses.html.erb (5.0ms)
+  Rendered dresses/show.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for nil:NilClass):
+    1: <li>
+    2:     <p>
+    3:         <%= @comment.comment %>
+    4:     </p>
+    5: </li>
+  
+app/views/comments/_comment.html.erb:3:in `_app_views_comments__comment_html_erb___2423476791582244881_70289882386860'
+app/views/dresses/_dresses.html.erb:14:in `_app_views_dresses__dresses_html_erb___1379949549906104215_70289882237200'
+app/views/dresses/show.html.erb:1:in `_app_views_dresses_show_html_erb__2050591033862732297_70289882204560'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 12:18:13 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [34 times] (10.0ms)
+  Rendered dresses/_dresses.html.erb (12.6ms)
+  Rendered dresses/show.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for nil:NilClass):
+    1: <li>
+    2:     <p>
+    3:         <%= @comment.comment %>
+    4:     </p>
+    5: </li>
+  
+app/views/comments/_comment.html.erb:3:in `_app_views_comments__comment_html_erb___2423476791582244881_70289951943220'
+app/views/dresses/_dresses.html.erb:14:in `_app_views_dresses__dresses_html_erb___1379949549906104215_70289951896460'
+app/views/dresses/show.html.erb:1:in `_app_views_dresses_show_html_erb__2050591033862732297_70289951882840'
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 12:18:28 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."dress_id" = ?[0m  [["dress_id", 1]]
+  Rendered collection of comments/_comment.html.erb [34 times] (0.5ms)
+  Rendered dresses/_dresses.html.erb (12.2ms)
+  Rendered dresses/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/dresses/1/comments" for 127.0.0.1 at 2019-01-06 12:18:39 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"comment"=>"working yet?", "dress_id"=>"1"}, "commit"=>"Post Comment", "dress_id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "dress_id", "comment") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-01-06 17:18:39.252722"], ["updated_at", "2019-01-06 17:18:39.252722"], ["dress_id", 1], ["comment", "working yet?"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
