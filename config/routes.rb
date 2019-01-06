@@ -14,6 +14,4 @@ Rails.application.routes.draw do
   resources :dresses, only: [:new, :create, :index, :show, :edit, :update] do
     resources :comments
   end
-
-  
 end

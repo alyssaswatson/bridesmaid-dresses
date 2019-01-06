@@ -8,19 +8,13 @@ class CommentsController < ApplicationController
         render json: @comments
     end
     
-    def create
-        
+    def create 
         @dress = Dress.find(params[:dress_id])
-        @comment = @dress.comments.build 
-        #byebug
-		@comment.update_attributes(comment_params)
-        if @comment.save
-            respond_to do |format|
-                format.js
-            end
-		else 
-			flash[:notice] = "The comment could not be saved"
-		end
+        @comment = @dress.comments.new(comment_params)
+        @comment.save!
+        respond_to do |format|
+            format.json {render json: @comment.to_json}
+        end
     end
 
     def show
