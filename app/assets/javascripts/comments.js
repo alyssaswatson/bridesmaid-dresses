@@ -1,5 +1,5 @@
 $(document).ready(function () {
     $('#comments-link').click(function(event) {
-        alert("clicked")
+        $('#comments-section').toggle()
     });
 });

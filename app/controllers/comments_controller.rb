@@ -3,10 +3,9 @@ require 'byebug'
 class CommentsController < ApplicationController
     
     def index
-        byebug
-		@dress = Dress.find(params[:landlord_id])
-		@buildings = @landlord.buildings.all
-		render json: @buildings
+		@dress = Dress.find(params[:dress_id])
+		@comments = @dress.comments.all
+		render json: @comments
 	end
 
 
