@@ -1,3 +1,5 @@
+require 'byebug'
+
 class DressesController < ApplicationController
 
     def index
@@ -23,6 +25,7 @@ class DressesController < ApplicationController
 
     def show
         @dress = Dress.find(params[:id])
+        byebug
     end
 
     def update
