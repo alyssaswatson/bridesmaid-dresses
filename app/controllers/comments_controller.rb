@@ -15,11 +15,17 @@ class CommentsController < ApplicationController
         #byebug
 		@comment.update_attributes(comment_params)
 		if @comment.save
-			redirect_to dress_comment_path(@dress.comment, @comment)
+			redirect_to dress_comment_path(@dress.comments, @comment)
 		else 
-			flash[:notice] = "The building couldn't be saved"
+			flash[:notice] = "The comment could not be saved"
 		end
     end
+
+    def show
+        #byebug
+		@comment= Comment.find(params[:id])
+	end
+	
 
 private
 
