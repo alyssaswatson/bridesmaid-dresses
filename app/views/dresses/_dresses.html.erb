@@ -1,4 +1,5 @@
 <body>
+
 <img src="<%=@dress.link%>" alt="dress" height="250" >
 <br>
 Dress Material: <%= @dress.material %>
@@ -6,7 +7,7 @@ Dress Material: <%= @dress.material %>
 Dress Length: <%= @dress.length %> inches
 <br>
 <%= link_to 'Edit Dress', edit_dress_path(@dress) %>
-<input type="submit" id="comments-button" value="See Comments">
+<button type="button" id="loadButton">See Comments</button>
 
 <section id="comments-section">
     <div id="comments"></div>
