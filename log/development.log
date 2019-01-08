@@ -34999,3 +34999,93 @@ Processing by DressesController#show as HTML
 Completed 200 OK in 346ms (Views: 313.1ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 19:05:23 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."dress_id" = ? LIMIT ?[0m  [["dress_id", 1], ["LIMIT", 1]]
+  Rendered dresses/_dresses.html.erb (1.0ms)
+  Rendered dresses/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 356ms (Views: 328.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-06 19:05:26 -0500
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb within layouts/application
+  [1m[36mDress Load (0.3ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered dresses/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 19:05:27 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."dress_id" = ? LIMIT ?[0m  [["dress_id", 1], ["LIMIT", 1]]
+  Rendered dresses/_dresses.html.erb (1.2ms)
+  Rendered dresses/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dresses" for 127.0.0.1 at 2019-01-06 19:05:55 -0500
+Processing by DressesController#index as HTML
+  Rendering dresses/index.html.erb within layouts/application
+  [1m[36mDress Load (0.2ms)[0m  [1m[34mSELECT "dresses".* FROM "dresses"[0m
+  Rendered dresses/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 94ms (Views: 92.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 19:05:57 -0500
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."dress_id" = ? LIMIT ?[0m  [["dress_id", 1], ["LIMIT", 1]]
+  Rendered dresses/_dresses.html.erb (1.4ms)
+  Rendered dresses/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dresses/1" for 127.0.0.1 at 2019-01-06 19:06:07 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /usr/local/lib/ruby/gems/2.6.0/bin/thin:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDress Load (0.1ms)[0m  [1m[34mSELECT  "dresses".* FROM "dresses" WHERE "dresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dresses/show.html.erb within layouts/application
+  [1m[36mComment Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."dress_id" = ? LIMIT ?[0m  [["dress_id", 1], ["LIMIT", 1]]
+  Rendered dresses/_dresses.html.erb (1.0ms)
+  Rendered dresses/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 269ms (Views: 241.9ms | ActiveRecord: 0.8ms)
+
+
